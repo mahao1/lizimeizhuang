@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/shangpinye.css"/>
+		<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css"/>
+
+	</head>		
+		
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script type="text/javascript">
+			
+			$(function(){
+				//移入关注我们显示隐藏
+				$(".gzh").mouseover(function(){
+					$(".guanzhu").show();
+				});
+				$(".gzh").mouseout(function(){
+					$(".guanzhu").hide();
+				});
+				//移入全部分类显示隐藏下拉菜单
+				$(".fenlei").hover(
+					function(){
+						$(".caidan").show();
+						$(".caidan").hover(
+							function(){
+								$(".caidan").show();
+							},function(){
+								$(".caidan").hide();
+							}
+						)
+					},function(){
+						$(".caidan").hide();
+					}
+				);
+				$(".renqi").css({"color":"#ff666b","border-bottom":"2px solid #ff666b"});
+			})
+		</script>
+	<body>
+		<header id="header">
+			<div class="header_r">				
+				<ul class="header_fr">
+					<li class="header_user">
+						<a href="denglu.html">登  录</a>
+						<s></s>
+						<a href="zhuce.html">免费注册</a>
+					</li>
+					<li class="header_guanzhu">
+						<a href="" class="gzh">关注我们</a>
+						<i class="iconfont arrow">&#xe635;</i>
+						<div class="guanzhu">
+							<a href=""><img src="imgs/sh-guanzhu-bg.jpg"/></a>
+						</div>
+					</li>
+					<li>
+						<a href="">帮助中心</a>
+					</li>
+					<li>
+						<a href=""><i class="iconfont arrow">&#xf00d6;</i>收藏丽子</a>
+					</li>
+				</ul>				
+			</div>			
+		</header>
+		
+		<!--side-->
+		<div class="side">
+			<ul class="side_top">
+				<li>
+					<a href="#" class="side_t">
+						<i class="iconfont">&#xe63c;</i>
+						<span>购物车</span>
+						<em class="side_cartnum">0</em>
+					</a>
+				</li>
+			</ul>	
+			<ul class="side_btm">
+		        <li class="consult">
+		        	<a href="#"><i class="iconfont">&#xe61e;</i></a>
+		        	<div class="side_left"><a href="">我的优惠券</a></div>
+		        </li>
+		        <li class="words">
+		        	<a href="#"><i class="iconfont">&#xe60f;</i></a>
+		            <div class="side_left"><a href="">我的丽子</a></div>
+		        </li>
+		        <li class="quote">
+		        	<a href="#"><i class="iconfont">&#xe615;</i></a>
+		            <div class="side_left side_ewm"><p>扫一扫，下载丽子APP</p><a href=""><img src="imgs/sh-lizi-2code.png"/></a></div>
+		        </li>
+		        <li class="qrcord">
+		        	<a href="shouye.html"><i class="iconfont">&#xe630;</i></a>
+		            <div class="side_left"><a href="shouye.html">返回首页</a></div>
+		        </li>
+		        <li class="return">
+		        	<a href="#header"><i class="iconfont">&#xe665;</i></a>
+		            <div class="side_left"><a href="#header">返回顶部</a></div>
+		        </li>
+		    </ul>
+		</div>
+		
+		<!--nav-->
+		<nav class="nav">
+			<div class="layout">
+				<a href="shouye.html"><img src="imgs/logo-08.png" class="logo" /></a>
+				<div class="nav_t">
+					<input type="text" class="search" placeholder="请输入商品或品牌" />
+					<ul>
+						<span>热搜榜：</span>
+						<li><a href="">悦诗风吟</a></li>
+						<li><a href="">面霜</a></li>
+						<li><a href="">兰芝</a></li>
+						<li><a href="">面膜</a></li>
+						<li><a href="">化妆水</a></li>
+						<li><a href="">唇膏/口红</a></li>
+						<li><a href="">BB霜</a></li>					
+					</ul>
+				</div>
+				<img src="imgs/search-btn.png" class="find" />
+				<div class="car">
+					<a href="" class="shop"><img src="imgs/sh-car.jpg" class="car"/>购物车<img src="imgs/sh-you.jpg" class="you"/></a>
+				</div>
+			</div>		
+		</nav>
+		
+		<!--menu-->
+		<div class="menu">
+			<div class="menu_t">
+				<div class="fenlei">
+					<img src="imgs/fenlei.jpg"/>
+					<a href="">全部商品分类</a>
+				</div>
+				<ul class="menu_r">
+					<li><a href="">60秒闪购</a></li>
+					<li><a href="">100%正品</a></li>
+					<li><a href="">手机丽子</a></li>
+				</ul>
+			</div>	
+
+			<div class="caidan">
+				<div class="shpin_l">
+					<ul class="ul_lt">
+						<p><a href="#">护肤</a></p>
+						<li><a href="#">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">防晒</a></li>
+						<li><a href="#">卸妆</a></li>
+						<li><a href="#">眼部护理</a></li>
+						<li><a href="#">面部精华</a></li>
+						<li><a href="#">乳液/面霜</a></li>					
+					</ul>
+					<ul class="ul_lb">
+						<p><a href="#">彩妆</a></p>
+						<li><a href="#">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+					</ul>
+				</div>
+				<div class="shpin_c">
+					<ul class="ul_rt">
+						<p><a href="#">日化清洁</a></p>
+						<li><a href="#">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">爽肤水</a></li>
+					</ul>
+					<ul class="ul_rc">
+						<p><a href="#">健康保养</a></p>
+						<li><a href="#">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">爽肤水</a></li>
+					</ul>
+					
+					<ul class="ul_rb">
+						<p><a href="#">化妆工具</a></p>
+						<li><a href="#">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">爽肤水</a></li>
+					</ul>
+				</div>
+				<div class="shpin_r">
+					<ul class="ul_r">
+						<li><img src="imgs/sh-pin1.jpg"/></li>
+						<li><img src="imgs/sh-pin2.jpg"/></li>
+						<li><img src="imgs/sh-pin3.jpg"/></li>
+						<li><img src="imgs/sh-pin4.jpg"/></li>
+						<li><img src="imgs/sh-pin5.jpg"/></li>
+						<li><img src="imgs/sh-pin6.jpg"/></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<!--main-->
+		<main class="main">
+			<div class="main_t1">
+				<span class="main_t1s">
+					<a href="shouye.html">首页</a>>
+					<a href="">全部</a>>
+				</span>
+				<a href="shangpinye_clear2.html" class="ximian">化妆水<em>x</em></a>
+				<a href="shangpinye_clear2.html">清除全部</a>
+			</div>
+			<div class="main_t2">				
+				<dl>
+					<dt>功效：</dt>
+					<dd>
+						<div class="main_dd">
+							<div><a href="">补水保湿（156）</a></div>
+							<div><a href="">淡化色斑（10）</a></div>
+							<div><a href="">收缩毛孔（35）</a></div>
+							<div><a href="">祛痘/去粉刺（11）</a></div>
+							<div><a href="">舒缓肌肤（20）</a></div>
+							<div><a href="">淡化干纹（2）</a></div>
+							<div><a href="">去黑头（15）</a></div>
+							<div><a href="">去角质（9）</a></div>
+							<div><a href="">提亮肤色（6）</a></div>
+							<div><a href="">去痘印（5）</a></div>
+							<div><a href="">清洁（76）</a></div>
+							<div><a href="">定妆（1）</a></div>
+						</div>
+						<a href="" class="more"><span>更多</span><i class="iconfont">&#xe607;</i></a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>品牌：</dt>
+					<dd>
+						<div class="main_dd">
+							<div><a href="">雅诗兰黛/ESTEE LAUDER（1）</a></div>
+							<div><a href="">思亲肤/SKINFOOD（1）</a></div>
+							<div><a href="">菲诗小铺/THEFACESHOP（2）</a></div>
+							<div><a href="">兰芝/LANEIGE（1）</a></div>
+							<div><a href="">雅诗兰黛/ESTEE LAUDER（1）</a></div>
+							<div><a href="">思亲肤/SKINFOOD（1）</a></div>
+							<div><a href="">莎娜/SANA（1）</a></div>
+							<div><a href="">雅诗兰黛/ESTEE LAUDER（1）</a></div>
+							<div><a href="">思亲肤/SKINFOOD（1）</a></div>
+							<div><a href="">莎娜/SANA（1）</a></div>
+							<div><a href="">雅诗兰黛/ESTEE LAUDER（1）</a></div>
+							<div><a href="">思亲肤/SKINFOOD（1）</a></div>
+						</div>
+						<a href="" class="more"><span>更多</span><i class="iconfont">&#xe607;</i></a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>价格：</dt>
+					<dd>
+						<div class="main_dd">
+							<div><a href="">99元以内（104）</a></div>
+							<div><a href="">100-199元（56）</a></div>
+							<div><a href="">200-299元（25）</a></div>
+							<div><a href="">300元以上（19）</a></div>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<div class="main_t3">
+				<a href="">
+					<span>销量</span>
+				</a>丨
+				<a href="" class="renqi">
+					<span>人气</span>
+				</a>丨
+				<a href="">
+					<span>价格</span>
+				</a>丨
+				<a href="">
+					<span>上新</span>
+				</a>
+			</div>
+			<div class="main_t4">
+				<ul class="main_list">
+					<li>
+						<a href=""><img src="imgs/spy_sfs1.jpg" /><p class="text">CHIFURE千妇恋无酒精保湿锁水美容液45ml 温和无刺激</p></a>
+						<p><span>￥89.00</span><span>已售367件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs2.jpg" /><p class="text">韩国THE FACE SHOP菲诗小铺芦荟清新柔肤水140ml补水保湿舒缓</p></a>
+						<p><span>￥68.00</span><span>已售85件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs3.jpg" /><p class="text">法国LANCOME兰蔻清莹嫩肤爽肤水蓝水 400ml 温和保湿</p></a>
+						<p><span>￥58.00</span><span>已售10件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs4.jpg" /><p class="text">韩国CHARMZONE婵真美菁美白柔肤水化妆水130ml保湿美白通透肌肤</p></a>
+						<p><span>￥49.00</span><span>已售5件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs5.jpg" /><p class="text">韩国SKINFOOD思亲肤龙舌兰仙人掌化妆水145ml 补水保湿亮白</p></a>
+						<p><span>￥95.00</span><span>已售92件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs6.jpg" /><p class="text">英国Amphora AromaticsAA网橙花化妆水200ml</p></a>
+						<p><span>￥98.00</span><span>已售0件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs7.jpg" /><p class="text">美国Kiehl's 科颜氏（契尔氏）小黄瓜水植物精华化妆水500ml补水细致毛孔</p></a>
+						<p><span>￥78.00</span><span>已售35件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs8.jpg" /><p class="text">法国LANCOME兰蔻玫瑰露清滢柔肤化妆水粉水200ml 补水保湿</p></a>
+						<p><span>￥135.00</span><span>已售3件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs9.jpg" /><p class="text">日本UTENA佑天兰摩洛哥精油保湿水200ml滋润营养</p></a>
+						<p><span>￥58.00</span><span>已售140件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs10.jpg" /><p class="text">日本MEISHOKU明色Organic Rose玫瑰薏仁保湿化妆水210ml</p></a>
+						<p><span>￥25.00</span><span>已售11件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs11.jpg" /><p class="text">Fresh馥蕾诗玫瑰金盏花清凉爽肤水喷雾 带喷头250ML</p></a>
+						<p><span>￥89.00</span><span>已售7件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs12.jpg" /><p class="text">日本DAISO大创ER药用胎盘素爽肤水乳液 120ml 美白淡斑</p></a>
+						<p><span>￥38.00</span><span>已售11件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs13.jpg" /><p class="text">千纤草丝瓜水500ml美白爽肤补水 保湿平衡油脂化妆水</p></a>
+						<p><span>￥48.00</span><span>已售2件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs14.jpg" /><p class="text">兰蔻玫瑰清滢保湿柔肤水 嫩肤水 化妆水400ml补水保湿 温和不刺激</p></a>
+						<p><span>￥54.00</span><span>已售76件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs15.jpg" /><p class="text">泊泉雅水嫩舒护活泉喷雾150ml爽肤水补水保湿舒缓肌肤</p></a>
+						<p><span>￥89.00</span><span>已售25件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs16.jpg" /><p class="text">Lancome/兰蔻清莹柔肤爽肤水/粉水400ml 补水保湿玫瑰水化妆水</p></a>
+						<p><span>￥69.00</span><span>已售1件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs17.jpg" /><p class="text">日本娥佩兰薏仁水Opera化妆水500ml 保湿补水嫩白爽肤水</p></a>
+						<p><span>￥165.00</span><span>已售0件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs18.jpg" /><p class="text">法国原装珍贵水eau precieuse油性皮肤爽肤水375ml 控油</p></a>
+						<p><span>￥49.00</span><span>已售48件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs19.jpg" /><p class="text">法国药妆Avene 雅漾 活泉水喷雾300ml 保湿补水爽肤水大喷雾舒缓</p></a>
+						<p><span>￥60.00</span><span>已售14422件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs20.jpg" /><p class="text">日本Orien nano h2o肌断食水喷雾200ml</p></a>
+						<p><span>￥30.00</span><span>已售69件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs21.jpg" /><p class="text">JOJOZEN橘滋冰川透润凝脂精华水喷雾冰川水100ML补水保湿舒缓提亮</p></a>
+						<p><span>￥103.00</span><span>已售1117件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs22.jpg" /><p class="text">送化妆棉eau precieuse法国珍贵水消炎祛痘控油爽肤水 375ml</p></a>
+						<p><span>￥261.00</span><span>已售28件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs23.jpg" /><p class="text">日本Labo城野医生毛孔收缩水100ml</p></a>
+						<p><span>￥42.00</span><span>已售401件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs24.jpg" /><p class="text">韩国SKIN-101白皙浓缩维生素C滋养精华水150ml</p></a>
+						<p><span>￥25.8.00</span><span>已售313件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs25.jpg" /><p class="text">日本Esthe Dew樱桃高保湿肤色祛痘控油芦荟爽肤水/化妆水补水500ml</p></a>
+						<p><span>￥158.00</span><span>已售9件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs26.jpg" /><p class="text">日本MUJI无印良品敏感肌舒柔化妆水爽肤水乳液200ml </p></a>
+						<p><span>￥50.76.00</span><span>已售58件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs27.jpg" /><p class="text">【买即送】日本Dr.Ci:Labo城野医生LaboLabo毛孔收缩水100ml </p></a>
+						<p><span>￥36.00</span><span>已售7件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs28.jpg" /><p class="text">法国evian依云天然矿泉水喷雾爽肤水300ml 强效保湿清凉舒缓</p></a>
+						<p><span>￥175.00</span><span>已售42件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs29.jpg" /><p class="text">法国Eau Precieuse珍贵水袪痘爽肤水375ml 控油祛痘</p></a>
+						<p><span>￥78.00</span><span>已售13件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs30.jpg" /><p class="text">包邮Kose高丝雪肌精 化妆水200ML雪水爽肤水柔肤水保湿补水</p></a>
+						<p><span>￥179.00</span><span>已售3件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs31.jpg" /><p class="text">Dr.Ci:Labo城野医生LaboLabo收缩毛孔化妆水100ml</p></a>
+						<p><span>￥45.00</span><span>已售6件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs32.jpg" /><p class="text">香港直邮 城野医生收缩毛孔化妆水爽肤水保湿控油去黑头</p></a>
+						<p><span>￥135.00</span><span>已售0件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs33.jpg" /><p class="text">韩国AHC B5透明质酸玻尿酸爽肤水100ml</p></a>
+						<p><span>￥109.00</span><span>已售1件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs34.jpg" /><p class="text">日本 SIVCA/诗薇卡 樱桃精华爽肤水500ml</p></a>
+						<p><span>￥179.00</span><span>已售3件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs35.jpg" /><p class="text">日本Esthe Dew伊诗露芦荟祛痘去粉刺化妆爽肤水500ml提亮肤色祛痘去粉刺</p></a>
+						<p><span>￥45.00</span><span>已售6件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs36.jpg" /><p class="text">美国Kiehl's科颜氏（契尔氏）亚马逊白泥净致毛孔化妆水250ml 平衡油脂</p></a>
+						<p><span>￥39.00</span><span>已售0件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs37.jpg" /><p class="text">千纤草玫瑰水爽肤水500ml美白舒缓保湿 </p></a>
+						<p><span>￥120.00</span><span>已售12件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs38.jpg" /><p class="text">新玉润保湿化妆水</p></a>
+						<p><span>￥128.00</span><span>已售3件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs39.jpg" /><p class="text">韩国SKINFOOD莴苣黄瓜爽肤水50ml </p></a>
+						<p><span>￥55.00</span><span>已售12件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sfs40.jpg" /><p class="text">Olay玉兰油抗氧化水补水保湿收缩毛孔多效醒肤水150ml</p></a>
+						<p><span>￥68.00</span><span>已售4件</span></p>
+					</li>
+				</ul>
+			</div>
+			<div class="main_t5">
+				<ul>
+					<li>
+						<span>1</span>
+						<a href="">2</a>
+						<a href="">3</a>
+						<a href="">4</a>
+						<a href="">5</a>
+						<a href="">下一页</a>
+					</li>
+				</ul>
+			</div>
+		</main>
+			
+		<!--footer-->
+		<footer class="footer">
+			<div class="footer_l">
+				<ul>
+					<li><a href="">关于丽子</a>/</li>
+					<li><a href="">商家入驻</a>/</li>
+					<li><a href="">加入我们</a>/</li>
+					<li><a href="">配送政策</a>/</li>
+					<li><a href="">售后保障</a>/</li>
+					<li><a href="">帮助中心</a>/</li>
+					<li><a href="">联系我们</a>/</li>
+					<li><a href="">平台公告</a>/</li>
+					<li><a href="">友情链接</a></li>
+				</ul>
+				<p>Copyright &copy; 2009-2016,辛巴信息(杭州)技术有限公司LIZI.COM增值电信业务经营许可证：浙B2-20110315  备案号：浙ICP备11012845号-5</p>
+				<p>服务时间：09:00-23:00&nbsp;&nbsp;客服热线：400-106-6160<a href=""><img src="imgs/ghs.png"/>浙公网安备33010402001635号</a></p>  				
+				<ul>
+					<li><a href="">米折网</a></li>
+					<li><a href="">一号店</a></li>
+					<li><a href="">国美在线</a></li>
+					<li><a href="">韩都衣舍</a></li>
+					<li><a href="">优购物</a></li>
+					<li><a href="">寺库网</a></li>
+					<li><a href="">海尔商城</a></li>
+					<li><a href="">比价网</a></li>
+					<li><a href="">挖东西</a></li>
+					<li><a href="">卷皮网</a></li>
+					<li><a href="">视客眼镜网</a></li>
+					<li><a href="">尚品网</a></li>
+					<li><a href="">飞牛网</a></li>
+					<li><a href="">悦美整形网</a></li>
+				</ul>
+				<a href=""><img src="imgs/flogo-jindian.png" class="tp"/></a>
+				<a href=""><img src="imgs/flogo-picc.png" class="tp"/></a>
+				<a href=""><img src="imgs/flogo-xinyong.png" class="tp"/></a>
+			</div>
+			<div class="footer_t">
+				<img src="imgs/erweima.png"/>
+				<img src="imgs/weixin.jpg" class="wx"/>
+				<p>扫描关注微信公众号</p>
+			</div>
+			<a href="" class="footer_r">
+				<img src="imgs/fapp.jpg"/>
+				<p>APP</p>
+				<p>手机客户端下载</p>
+			</a>
+		</footer>
+	</body>
+</html>

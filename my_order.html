@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/dl_after_share.css"/>
+		<link rel="stylesheet" type="text/css" href="css/my_order.css"/>
+		<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css"/>
+
+	</head>		
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		
+		<script type="text/javascript">
+			$(function(){
+				//移入移出我的丽子显示隐藏
+				$(".header_user").hover(
+					function(){
+						$(".more_bd").show();	
+					},function(){
+						$(".more_bd").hide();
+					}
+				);
+				//移入移出关注我们显示隐藏
+				$(".gzh").hover(
+					function(){
+						$(".guanzhu").show();
+					},function(){
+						$(".guanzhu").hide();
+					}
+				);
+				//移入移出全部商品分类显示隐藏
+				$(".fenlei").hover(
+					function(){
+						$(".caidan").show();
+						$(".caidan").hover(
+							function(){
+								$(".caidan").show();
+							},function(){
+								$(".caidan").hide();
+							}
+						);
+					},function(){
+						$(".caidan").hide();
+					}
+				);
+				//点击账户管理显示列表，再次点击隐藏列表
+				$(".li_first").click(function(){
+					if($(".main_lbm").css("display") == "none"){
+						$(".main_lbm").show();
+					}else{
+						$(".main_lbm").hide();
+					}
+				});
+				//移入列表中每个li下的元素变色
+				$(".main_lbm li").hover(
+					function(){
+						$(this).addClass("selected");
+						$(this).css({"background":"#eee"});
+						$(this).children().css({"color":"#ff666b"});
+						$(this).children().children().css({"color":"#ff666b"});						
+					},function(){
+						$(this).addClass("selected");
+						$(this).css({"background":"#fff"});
+						$(this).children().css({"color":"#34495e"});
+						$(this).children().children().css({"color":"#8c8c8c"});	
+					}
+				);
+				$(".main_li").not(".li_first").hover(
+					function(){
+						$(this).addClass("selected");
+						$(this).children().css({"color":"#ff666b"});
+						$(this).children().children().css({"color":"#ff666b"});
+					},function(){
+						$(this).addClass("selected");
+						$(this).children().css({"color":"#34495e"});
+						$(this).children().children().css({"color":"#8c8c8c"});	
+					}
+				);								
+			})
+		</script>
+	<body>
+		<header id="header">
+			<div class="header_r">				
+				<ul class="header_fr">
+					<li>
+						<a href="">xxxxxxx</a>
+						[<a href="shouye.html">退出</a>]
+					</li>
+					<li class="header_user">
+						<a href="my_order.html">我的丽子</a>
+						<div class="more_bd">
+							<div class="list">
+								<a href="my_order.html">我的订单</a>
+								<a href="">我的丽子币</a>
+								<a href="">我的余额</a>
+								<a href="">我的优惠券</a>
+								<a href="">修改收货地址</a>
+							</div>
+						</div>
+					</li>
+					<li class="header_guanzhu">
+						<a href="" class="gzh">关注我们</a>
+						<i class="iconfont arrow">&#xe635;</i>
+						<div class="guanzhu">
+							<a href=""><img src="imgs/sh-guanzhu-bg.jpg"/></a>
+						</div>
+					</li>
+					<li>
+						<a href="">帮助中心</a>
+					</li>
+					<li>
+						<a href=""><i class="iconfont arrow">&#xf00d6;</i>收藏丽子</a>
+					</li>
+				</ul>				
+			</div>			
+		</header>
+		
+		<!--side-->
+		<div class="side">
+			<ul class="side_top">
+				<li>
+					<a href="#" class="side_t">
+						<i class="iconfont">&#xe63c;</i>
+						<span>购物车</span>
+						<em class="side_cartnum">0</em>
+					</a>
+				</li>
+			</ul>	
+			<ul class="side_btm">
+		        <li class="consult">
+		        	<a href="#"><i class="iconfont">&#xe61e;</i></a>
+		        	<div class="side_left"><a href="">我的优惠券</a></div>
+		        </li>
+		        <li class="words">
+		        	<a href="#"><i class="iconfont">&#xe60f;</i></a>
+		            <div class="side_left"><a href="">我的丽子</a></div>
+		        </li>
+		        <li class="quote">
+		        	<a href="#"><i class="iconfont">&#xe615;</i></a>
+		            <div class="side_left side_ewm"><p>扫一扫，下载丽子APP</p><a href=""><img src="imgs/sh-lizi-2code.png"/></a></div>
+		        </li>
+		        <li class="qrcord">
+		        	<a href="shouye.html"><i class="iconfont">&#xe630;</i></a>
+		            <div class="side_left"><a href="shouye.html">返回首页</a></div>
+		        </li>
+		        <li class="return">
+		        	<a href="#header"><i class="iconfont">&#xe665;</i></a>
+		            <div class="side_left"><a href="#header">返回顶部</a></div>
+		        </li>
+		    </ul>
+		</div>
+		
+		<!--nav-->
+		<nav class="nav">
+			<div class="layout">
+				<a href="shouye.html"><img src="imgs/logo-08.png" class="logo" /></a>
+				<div class="nav_t">
+					<input type="text" class="search" placeholder="请输入商品或品牌" />
+					<ul>
+						<span>热搜榜：</span>
+						<li><a href="">悦诗风吟</a></li>
+						<li><a href="">面霜</a></li>
+						<li><a href="">兰芝</a></li>
+						<li><a href="">面膜</a></li>
+						<li><a href="">化妆水</a></li>
+						<li><a href="">唇膏/口红</a></li>
+						<li><a href="">BB霜</a></li>					
+					</ul>
+				</div>
+				<img src="imgs/search-btn.png" class="find" />
+				<div class="car">
+					<a href="" class="shop"><img src="imgs/sh-car.jpg" class="car"/>购物车<img src="imgs/sh-you.jpg" class="you"/></a>
+				</div>
+			</div>		
+		</nav>
+		
+		<!--menu-->
+		<div class="menu">
+			<div class="menu_t">
+				<div class="fenlei">
+					<img src="imgs/fenlei.jpg"/>
+					<a href="">全部商品分类</a>
+				</div>
+				<ul class="menu_r">
+					<li><a href="">60秒闪购</a></li>
+					<li><a href="">100%正品</a></li>
+					<li><a href="">手机丽子</a></li>
+				</ul>
+			</div>	
+
+			<div class="caidan">
+				<div class="shpin_l">
+					<ul class="ul_lt">
+						<p><a href="#">护肤</a></p>
+						<li><a href="shangpinye.html">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">防晒</a></li>
+						<li><a href="#">卸妆</a></li>
+						<li><a href="#">眼部护理</a></li>
+						<li><a href="#">面部精华</a></li>
+						<li><a href="#">乳液/面霜</a></li>					
+					</ul>
+					<ul class="ul_lb">
+						<p><a href="#">彩妆</a></p>
+						<li><a href="#">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+					</ul>
+				</div>
+				<div class="shpin_c">
+					<ul class="ul_rt">
+						<p><a href="#">日化清洁</a></p>
+						<li><a href="#">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">爽肤水</a></li>
+					</ul>
+					<ul class="ul_rc">
+						<p><a href="#">健康保养</a></p>
+						<li><a href="#">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">爽肤水</a></li>
+					</ul>
+					
+					<ul class="ul_rb">
+						<p><a href="#">化妆工具</a></p>
+						<li><a href="#">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">爽肤水</a></li>
+					</ul>
+				</div>
+				<div class="shpin_r">
+					<ul class="ul_r">
+						<li><img src="imgs/sh-pin1.jpg"/></li>
+						<li><img src="imgs/sh-pin2.jpg"/></li>
+						<li><img src="imgs/sh-pin3.jpg"/></li>
+						<li><img src="imgs/sh-pin4.jpg"/></li>
+						<li><img src="imgs/sh-pin5.jpg"/></li>
+						<li><img src="imgs/sh-pin6.jpg"/></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		
+		<!--main-->
+		<main>
+			<div class="main layout">
+				<div class="main_l">
+					<div class="main_lt">
+						<h4>我的丽子</h4>
+					</div>
+					<ul class="main_lb">
+						<li class="main_li li_first">
+							<h3>账户管理<i class="iconfont gl_list">&#xe665;</i></h3>
+							<ul class="main_lbm">
+								<li><a href="my_order.html"><i class="iconfont">&#xe632;</i>我的订单</a></li>
+								<li><a href=""><i class="iconfont">&#xe6a3;</i>我的丽子币</a></li>
+								<li><a href=""><i class="iconfont">&#xe61e;</i>我的优惠券</a></li>
+								<li><a href=""><i class="iconfont">&#xe611;</i>账户余额</a></li>
+								<li><a href=""><i class="iconfont">&#xe60b;</i>收货地址管理</a></li>
+							</ul>
+						</li>
+						<li class="main_li"><a href="my_refund.html"><i class="iconfont">&#xe62b;</i>退款管理</a></li>
+						<li class="main_li"><a href="my_information.html"><i class="iconfont">&#xe625;</i>个人信息</a></li>
+						<li class="main_li"><a href="my_safe.html"><i class="iconfont">&#xe604;</i>账户安全</a></li>
+					</ul>
+				</div>		
+				<div class="main_r">
+					<div class="main_rt">
+						<h4>
+							<a href="">全部订单<em>(0)</em></a>丨
+							<a href="">待付款<em>(0)</em></a>丨
+							<a href="">待发货<em>(0)</em></a>丨
+							<a href="">待收货<em>(0)</em></a>丨
+							<a href="">待评价<em>(0)</em></a>丨
+							<a href="">退货退款</a>
+							<a href="" class="main_hsz"><i class="iconfont">&#xe61f;</i>订单回收站</a>
+						</h4>
+					</div>
+					<div class="main_rb">
+						<ul>
+							<li></li>
+						</ul>
+					</div>
+				</div>		
+				
+			</div>
+		</main>
+		
+		<!--footer-->
+		<footer class="footer">
+			<div class="footer_l">
+				<ul>
+					<li><a href="">关于丽子</a>/</li>
+					<li><a href="">商家入驻</a>/</li>
+					<li><a href="">加入我们</a>/</li>
+					<li><a href="">配送政策</a>/</li>
+					<li><a href="">售后保障</a>/</li>
+					<li><a href="">帮助中心</a>/</li>
+					<li><a href="">联系我们</a>/</li>
+					<li><a href="">平台公告</a>/</li>
+					<li><a href="">友情链接</a></li>
+				</ul>
+				<p>Copyright &copy; 2009-2016,辛巴信息(杭州)技术有限公司LIZI.COM增值电信业务经营许可证：浙B2-20110315  备案号：浙ICP备11012845号-5</p>
+				<p>服务时间：09:00-23:00&nbsp;&nbsp;客服热线：400-106-6160<a href=""><img src="imgs/ghs.png"/>浙公网安备33010402001635号</a></p>  				
+				<ul>
+					<li><a href="">米折网</a></li>
+					<li><a href="">一号店</a></li>
+					<li><a href="">国美在线</a></li>
+					<li><a href="">韩都衣舍</a></li>
+					<li><a href="">优购物</a></li>
+					<li><a href="">寺库网</a></li>
+					<li><a href="">海尔商城</a></li>
+					<li><a href="">比价网</a></li>
+					<li><a href="">挖东西</a></li>
+					<li><a href="">卷皮网</a></li>
+					<li><a href="">视客眼镜网</a></li>
+					<li><a href="">尚品网</a></li>
+					<li><a href="">飞牛网</a></li>
+					<li><a href="">悦美整形网</a></li>
+				</ul>
+				<a href=""><img src="imgs/flogo-jindian.png" class="tp"/></a>
+				<a href=""><img src="imgs/flogo-picc.png" class="tp"/></a>
+				<a href=""><img src="imgs/flogo-xinyong.png" class="tp"/></a>
+			</div>
+			<div class="footer_t">
+				<img src="imgs/erweima.png"/>
+				<img src="imgs/weixin.jpg" class="wx"/>
+				<p>扫描关注微信公众号</p>
+			</div>
+			<a href="" class="footer_r">
+				<img src="imgs/fapp.jpg"/>
+				<p>APP</p>
+				<p>手机客户端下载</p>
+			</a>
+		</footer>
+	</body>
+</html>

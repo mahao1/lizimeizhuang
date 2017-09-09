@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/xqy.css"/>
+		<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css"/>
+	</head>
+	<script type="text/javascript" src="js/jquery.js" ></script>
+	
+	<script type="text/javascript">
+	$(function(){
+		//放大镜部分
+        function Zoom(object){
+            this.zoomArea=$(".zoom",object);//保存促发放大效果的区域
+            this.moveArea=$(".move",object);//保存移动区域
+            this.zoomDetail=$(".zoomDetail",object);//保存放大镜区域
+            this.zoomDetailImg=$("img",this.zoomDetail);//保存放大镜里面的图
+            this.zoomAreaWidth=this.zoomArea.width();
+            this.moveAreaWidth=this.moveArea.width();
+            this.zoomAreaHeight=this.zoomArea.height();
+            this.moveAreaHeight=this.moveArea.height();
+            this.zoomDetailWidth=this.zoomDetail.width();
+            this.zoomDetailHeight=this.zoomDetail.height();
+            this.zoomAreaOffset=this.zoomArea.offset();//初始化放大区域在视口中的相对偏移;
+            this.XY=null;//初始化鼠标相对于放大区域的偏移偏移值
+            this.moveBili=null;//
+            var _this_=this;
+            this.zoomArea.mousemove(function(e){//当鼠标在放大区域移动的时候执行
+				_this_.move(e.pageX,e.pageY);   
+			}).mouseover(function(){
+				_this_.moveArea.show();
+				_this_.zoomDetail.show();
+			}).mouseout(function(){
+				_this_.moveArea.hide();
+				_this_.zoomDetail.hide();                                               
+			});
+            this.calculate();//初始化并计算出需要的比例值
+            //以下是小图部分的功能实现
+            this.l=0;
+            this.scrollObj=$(".slideMain ul",object);//保存ul滚动对象
+            this.lis=this.scrollObj.children();//保存小图片列表
+
+            this.lis.mouseover(function(){
+                _this_.changeImgSrc(this);
+                $(this).children().css({"border":"1px solid #ff666b"});
+            });
+            this.lis.mouseout(function(){
+            	$(this).children().css({"border":"1px solid #ccc"});
+            })
+        };
+	    Zoom.prototype={
+	        scrollLeft:function(){
+	            if(Math.abs(this.l)==this.s){return};
+	            this.l--;
+	            this.scrollObj.animate({left:this.l*58+"px"},"fast");   
+	        },
+	        scrollRight:function(){
+	            if(this.l==0){return};
+	            this.l++;
+	            this.scrollObj.animate({left:this.l*58+"px"},"fast");
+	        },
+	        changeImgSrc:function(o){
+	            //改变标识样式
+	            $(o).addClass("selected").siblings().removeClass("selected");
+	            this.zoomArea.find("img").attr("src",$(o).find("img").attr("medium-img"));
+	            this.zoomDetailImg.attr("src",$(o).find("img").attr("medium-img"));
+	
+	        },
+	        move:function(x,y){//鼠标在放大区域移动的时候执行的函数
+	            this.XY=this.mousePosAndSetPos(x,y);//计算出鼠标相对于放大区域的x,y值
+	            //设置滑块的位置
+	            this.moveArea.css({
+                    left:this.XY.offsetX+"px",
+                    top:this.XY.offsetY+"px"
+                });
+	            //设置大图在细节位置
+	            this.zoomDetailImg.css({
+	                marginLeft:-this.XY.offsetX*this.moveBili+"px",
+	                marginTop:-this.XY.offsetY*this.moveBili+"px"
+	            });
+	        },
+	        mousePosAndSetPos:function(x,y){//实时计算并设置滑块的位置
+	            x=x-this.zoomAreaOffset.left-this.moveArea.width()/2;
+	            y=y-this.zoomAreaOffset.top-this.moveArea.height()/2;
+	            x=x<0?0:x;
+	            y=y<0?0:y;
+	            x=x>(this.zoomAreaWidth-this.moveAreaWidth)?this.zoomAreaWidth-this.moveAreaWidth:x;
+	            y=y>(this.zoomAreaHeight-this.moveAreaHeight)?this.zoomAreaHeight-this.moveAreaHeight:y;
+	            return{
+	                offsetX:x,
+	                offsetY:y
+	            };  
+	        },
+	        calculate:function(){//计算函数
+	            var widthBili,heightBili;
+	            //计算移动的滑块与放大镜铺面显示的比例宽高
+	                widthBili=(this.zoomAreaWidth*this.zoomDetailWidth)/this.moveAreaWidth;
+	                heightBili=(this.zoomAreaHeight*this.zoomDetailHeight)/this.moveAreaHeight;
+	            //把比出来的宽高
+	                this.zoomDetailImg.css({width:widthBili+"px",height:heightBili+"px"});
+	            //返回移动的比例
+	                this.moveBili=(widthBili-this.zoomDetailWidth)/(this.zoomAreaWidth-this.moveAreaWidth);
+	        }
+	    };
+        var zoom=new Zoom($(".ZoomMain").eq(0));
+        
+        //移入关注我们显示隐藏
+        $(".gzh").hover(
+        	function(){
+        		$(".guanzhu").show();
+        	},function(){
+        		$(".guanzhu").hide();
+        	}
+        );
+        //移入全部商品显示下拉菜单
+        $(".sh-pin").hover(
+        	function(){
+        		$(".allpin").show();
+        		$(".allpin").hover(
+        			function(){
+        				$(".allpin").show();
+        			},function(){
+        				$(".allpin").hide();
+        			}
+        		)
+        	},function(){
+        		$(".allpin").hide();
+        	}
+        );
+        
+	})();
+	
+	
+	</script>
+	<body>
+		<header id="header">
+			<div class="header_r">				
+				<ul class="header_fr">
+					<li class="header_user">
+						<a href="denglu.html">登  录</a>
+						<s></s>
+						<a href="zhuce.html">免费注册</a>
+					</li>
+					<li class="header_cart">
+						<a herf="">
+							<i class="iconfont arrow">&#xe68f;</i>购物车
+							<em class="cartnum">0</em>件
+						</a>
+						<i class="iconfont arrow">&#xe635;</i>
+					</li>
+					<li class="header_guanzhu">
+						<a href="" class="gzh">关注我们</a>
+						<i class="iconfont arrow">&#xe635;</i>
+						<div class="guanzhu">
+							<a href=""><img src="imgs/sh-guanzhu-bg.jpg"/></a>
+						</div>
+					</li>
+					<li>
+						<a href="">帮助中心</a>
+					</li>
+					<li>
+						<a href=""><i class="iconfont arrow">&#xf00d6;</i>收藏丽子</a>
+					</li>
+				</ul>				
+			</div>
+		</header>
+		
+		<nav id="nav">	
+			<div class="nav layout">
+				<a href="shouye.html"><img src="imgs/logo-08.png" class="logo"/></a>
+				<div class="line"></div>
+				<div class="nav_l">
+					<img src="imgs/xq-lizi.jpg" class="xq_lz"/>
+					<a href="">丽子自营</a>
+					<img src="imgs/xq-kefu.jpg" class="xq_kf"/>	
+					<i class="iconfont sanjiao">&#xe607;</i>
+					<div class="xq_xy">
+						<p><span>信誉等级：</span><i class="iconfont xin">&#xf00d6;&#xf00d6;&#xf00d6;&#xf00d6;&#xf00d6;</i></p>
+						<p><span>总销量：</span>486463<span>创建时间：2015-05-07</span></p>
+						<p><span>退货率：</span>0%<span>商家坐标：</span>浙江省杭州市</p>
+						<p><span>提供服务：</span>	
+							<span class="yellow">48小时发货</span>
+							<span class="yellow">30天退换货</span>
+							<span class="yellow_3">提供发票</span>
+							<span class="yellow">满69元包邮</span>
+						</p>
+					</div>
+				</div>
+				<div class="nav_r">
+					<input type="text" placeholder="请输入商品或品牌" class="txt"/>
+					<input type="button" value="搜全站" class="btn"/>
+					<a href="xqy_bendian.html">搜本店</a>
+				</div>
+			</div>
+		</nav>
+		
+		<banner>
+			<img src="imgs/xq-banner.jpg" class="banner" />
+		</banner>
+		
+		<!--side-->
+		<div class="side">
+			<ul class="side_top">
+				<li>
+					<a href="#" class="side_t">
+						<i class="iconfont">&#xe63c;</i>
+						<span>购物车</span>
+						<em class="side_cartnum">0</em>
+					</a>
+				</li>
+			</ul>	
+			<ul class="side_btm">
+		        <li class="consult">
+		        	<a href="#"><i class="iconfont">&#xe61e;</i></a>
+		        	<div class="side_left"><a href="">我的优惠券</a></div>
+		        </li>
+		        <li class="words">
+		        	<a href="#"><i class="iconfont">&#xe60f;</i></a>
+		            <div class="side_left"><a href="">我的丽子</a></div>
+		        </li>
+		        <li class="quote">
+		        	<a href="#"><i class="iconfont">&#xe615;</i></a>
+		            <div class="side_left side_ewm"><p>扫一扫，下载丽子APP</p><a href=""><img src="imgs/sh-lizi-2code.png"/></a></div>
+		        </li>
+		        <li class="qrcord">
+		        	<a href="shouye.html"><i class="iconfont">&#xe630;</i></a>
+		            <div class="side_left"><a href="shouye.html">返回首页</a></div>
+		        </li>
+		        <li class="return">
+		        	<a href="#header"><i class="iconfont">&#xe665;</i></a>
+		            <div class="side_left"><a href="#header">返回顶部</a></div>
+		        </li>
+		    </ul>
+		</div>
+		
+		<menu id="menu">
+			<div class="layout">
+				<a href="" class="menu">
+					<ul>
+						<li>首页</li>
+						<li class="sh-pin">全部商品<i class="iconfont">&#xe607;</i></li>
+						<li>护肤</li>
+						<li>彩妆</li>
+						<li>日化清洁</li>
+						<li>健康保养</li>
+						<li>化妆工具</li>
+					</ul>
+				</a>				
+				<a href="" class="allpin"> 
+					<ul>
+						<li>当季爆款</li>
+						<li>潮流新品</li>
+						<li>护肤</li>
+						<li>彩妆</li>
+						<li>化妆工具</li>
+						<li>日化清洁</li>
+						<li>健康保养</li>
+					</ul>
+				</a>
+			</div>
+		</menu>
+		
+		<main class="main layout">	
+			<div class="main_tl">
+				<div class="ZoomMain">
+					<div class="zoom">
+			        	<span class="move"></span>
+				        <img width="380" height="380" src="imgs/xq-mid1.jpg" />
+				    </div>
+				    <div class="littleImg">
+				        <div class="slideMain">
+				            <ul class="clearfix">
+				            	<li class="selected"><img width="55" height="55" src="imgs/xq-small1.jpg" medium-img="imgs/xq-mid1.jpg" large-img="imgs/xq-big1.jpg" /></li>
+				                <li><img width="55" height="55" src="imgs/xq-small2.jpg" medium-img="imgs/xq-mid2.jpg" large-img="imgs/xq-big2.jpg" /></li>
+				                <li><img width="55" height="55" src="imgs/xq-small3.jpg" medium-img="imgs/xq-mid3.jpg" large-img="imgs/xq-big3.jpg" /></li>
+				                
+				            </ul>
+				        </div>
+			    	</div>
+				    <div class="zoomDetail">
+				        <img width="800" height="800" src="imgs/xq-big1.jpg" />
+				    </div>
+				</div>
+				
+				<div class="main_tlr">
+					<div class="main_tlrt">
+						<h2>泰国Mistine dream咬唇妆唇彩口红染唇液  保湿显色持久</h2>
+						<p>咬唇妆唇彩口红染唇液  保湿显色持久</p>
+					</div>
+					<div class="main_tlrb">
+						<p><span class="main_span">市场价</span><span class="main_jia">￥69.00-86.00</span></p>
+						<div><span class="main_rq">人气爆款</span><h3>65.00</h3></div>
+						<p><span class="main_span">销量</span><span class="main_gray">最近售出<span class="main_red">66</span>件</span></p>
+						<p><span class="main_span">评价</span><i class="iconfont star">&#xe60c;&#xe60c;&#xe60c;&#xe60c;&#xe60c;</i><span class="main_red">4.8分</span>（已有27人评价）</p>
+						<p><span class="main_span">规格</span><span class="main_gg">1#玫红</span><span class="main_gg">2#橘红色</span><span class="main_gg">3#大红</span></p>
+						<p><span class="main_span">数量</span><input type="number" min="1" max="100" step="1" />件（库存2638件）</p>
+						<p class="main_last"><i class="iconfont">&#xe63c;</i>加入购物车</p>
+						<ul class="main_bzh">
+							<li><i class="iconfont">&#xe608;</i>100%正品</li>
+							<li><i class="iconfont">&#xe6be;</i>48小时发货</li>
+							<li><i class="iconfont">&#xe6e2;</i>30天无理由退货</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="main_tr">
+				<div class="main_tri">
+					<p>看了又看<a href=""><i class="iconfont road">&#xe60a;</i></a></p>
+					<a href=""><img src="imgs/xq-main-tr1.jpg" /><span>265.00</span></a>
+					<a href=""><img src="imgs/xq-main-tr2.jpg" /><span>269.00</span></a>
+					<a href=""><img src="imgs/xq-main-tr3.jpg" /><span>109.00</span></a>
+				</div>
+			</div>
+			
+			<div class="main_bl">
+				<ul class="main_blt">
+					<a href=""><li>商品详情</li></a>
+					<a href=""><li>评价详情（27）</li></a>
+					<div class="kong"></div>
+				</ul>
+				<div class="main_bg">产品参数</div>
+				<div class="main_blc">
+					<ul class="main_blcl">
+						<li>商品名称：</li>
+						<li>所属品牌：</li>
+						<li>产地：</li>
+						<li>试用肤质：</li>
+						<li>生产日期：</li>
+						<li>保质期：</li>
+						<li>包装方式：</li>
+					</ul>
+					<ul class="main_blcc">
+						<li>泰国Mistine dream咬唇妆唇彩口红染唇液  保湿显色持久</li>
+						<li>美式婷</li>
+						<li>泰国</li>
+						<li>所有肤质</li>
+						<li>及时更新</li>
+						<li>3年</li>
+						<li>正常规格</li>
+					</ul>
+					<div class="main_blcr">
+						<img src="imgs/xq-main-blr.jpg"/>
+					</div>
+					
+				</div>
+				<div class="main_bg">商品介绍</div>
+				<img src="imgs/xq-main-shao1.jpg" class="shao"/>
+				<img src="imgs/xq-main-shao2.jpg" class="shao"/>
+				<div class="main_bg sppj">商品评价</div>
+				<div class="main_pj">
+					<img src="imgs/xq-main-pj.jpg" />
+					<p>对自己使用过的商品进行评价，它将成为菇凉们的购买参考依据。</p>
+					<a href="">我要评价</a>
+				</div>
+				<div class="main_blbt">
+					<a href="">带图（1）</a>
+					<a href="">全部评价（27）</a>
+				</div>
+				<div class="main_blb">
+					<img src="imgs/face1.jpg" class="face"/>
+					<div class="main_blbr">
+						<p>童春芳***01<span>干性肌肤 </span></p>
+						<p><i class="iconfont">&#xe60c;&#xe60c;&#xe60c;&#xe60c;&#xe60c;</i><span>2016-10-26 20:39:49</span></p> 
+					</div>
+					<h4>很好用的平价品 </h4>
+					<p class="main_p">规格：无    <span>1#玫红</span> </p>
+				</div>
+				<div class="main_blb">
+					<img src="imgs/face1.jpg" class="face"/>
+					<div class="main_blbr">
+						<p>童春芳***01<span>干性肌肤 </span></p>
+						<p><i class="iconfont">&#xe60c;&#xe60c;&#xe60c;&#xe60c;&#xe60c;</i><span>2016-10-26 20:39:49</span></p> 
+					</div>
+					<h4>很好用的平价品 </h4>
+					<p class="main_p">规格：无    <span>1#玫红</span> </p>
+				</div>
+				<div class="main_blb">
+					<img src="imgs/face1.jpg" class="face"/>
+					<div class="main_blbr">
+						<p>童春芳***01<span>干性肌肤 </span></p>
+						<p><i class="iconfont">&#xe60c;&#xe60c;&#xe60c;&#xe60c;&#xe60c;</i><span>2016-10-26 20:39:49</span></p> 
+					</div>
+					<h4>很好用的平价品 </h4>
+					<p class="main_p">规格：无    <span>1#玫红</span> </p>
+				</div>
+				<div class="main_blb">
+					<img src="imgs/face1.jpg" class="face"/>
+					<div class="main_blbr">
+						<p>童春芳***01<span>干性肌肤 </span></p>
+						<p><i class="iconfont">&#xe60c;&#xe60c;&#xe60c;&#xe60c;&#xe60c;</i><span>2016-10-26 20:39:49</span></p> 
+					</div>
+					<h4>很好用的平价品 </h4>
+					<p class="main_p">规格：无    <span>1#玫红</span> </p>
+				</div>
+				<div class="main_blb">
+					<img src="imgs/face1.jpg" class="face"/>
+					<div class="main_blbr">
+						<p>童春芳***01<span>干性肌肤 </span></p>
+						<p><i class="iconfont">&#xe60c;&#xe60c;&#xe60c;&#xe60c;&#xe60c;</i><span>2016-10-26 20:39:49</span></p> 
+					</div>
+					<h4>很好用的平价品 </h4>
+					<p class="main_p">规格：无    <span>1#玫红</span> </p>
+				</div>
+				<div class="main_blb">
+					<img src="imgs/face1.jpg" class="face"/>
+					<div class="main_blbr">
+						<p>童春芳***01<span>干性肌肤 </span></p>
+						<p><i class="iconfont">&#xe60c;&#xe60c;&#xe60c;&#xe60c;&#xe60c;</i><span>2016-10-26 20:39:49</span></p> 
+					</div>
+					<h4>很好用的平价品 </h4>
+					<p class="main_p">规格：无    <span>1#玫红</span> </p>
+				</div>
+				<div class="main_blb">
+					<img src="imgs/face1.jpg" class="face"/>
+					<div class="main_blbr">
+						<p>童春芳***01<span>干性肌肤 </span></p>
+						<p><i class="iconfont">&#xe60c;&#xe60c;&#xe60c;&#xe60c;&#xe60c;</i><span>2016-10-26 20:39:49</span></p> 
+					</div>
+					<h4>很好用的平价品 </h4>
+					<p class="main_p">规格：无    <span>1#玫红</span> </p>
+				</div>
+				<div class="main_blb">
+					<img src="imgs/face1.jpg" class="face"/>
+					<div class="main_blbr">
+						<p>童春芳***01<span>干性肌肤 </span></p>
+						<p><i class="iconfont">&#xe60c;&#xe60c;&#xe60c;&#xe60c;&#xe60c;</i><span>2016-10-26 20:39:49</span></p> 
+					</div>
+					<h4>很好用的平价品 </h4>
+					<p class="main_p">规格：无    <span>1#玫红</span> </p>
+				</div>
+				<div class="main_blb">
+					<img src="imgs/face1.jpg" class="face"/>
+					<div class="main_blbr">
+						<p>童春芳***01<span>干性肌肤 </span></p>
+						<p><i class="iconfont">&#xe60c;&#xe60c;&#xe60c;&#xe60c;&#xe60c;</i><span>2016-10-26 20:39:49</span></p> 
+					</div>
+					<h4>很好用的平价品 </h4>
+					<p class="main_p">规格：无    <span>1#玫红</span> </p>
+				</div>
+				<div class="main_blb">
+					<img src="imgs/face1.jpg" class="face"/>
+					<div class="main_blbr">
+						<p>童春芳***01<span>干性肌肤 </span></p>
+						<p><i class="iconfont">&#xe60c;&#xe60c;&#xe60c;&#xe60c;&#xe60c;</i><span>2016-10-26 20:39:49</span></p> 
+					</div>
+					<h4>很好用的平价品 </h4>
+					<p class="main_p">规格：无    <span>1#玫红</span> </p>
+				</div>
+				
+				<div class="main_ye">
+					<a href="">1</a>
+					<a href="">2</a>
+					<a href="">3</a>
+					<a href="">下一页</a>
+				</div>
+			</div>
+			
+			
+			<div class="main_br">
+				<div class="main_brt">
+					<img src="imgs/xq-main-redshu.jpg" class="redshu"/>
+					<span>相似单品推荐</span>
+					<a href="">More</a>
+				</div>
+				<ul class="main_brb">
+					<li><a href=""><img src="imgs/xq-main-br1.jpg"/></a><h4>美国Maybelline美宝莲宝蓓爱炫彩护唇膏口红1.9g持久滋润</h4><p>￥32.00</p><span>45.00</span></li>
+					<li><a href=""><img src="imgs/xq-main-br2.jpg"/></a><h4>美国Maybelline美宝莲宝蓓爱炫彩护唇膏口红1.9g持久滋润</h4><p>￥32.00</p><span>45.00</span></li>
+					<li><a href=""><img src="imgs/xq-main-br3.jpg"/></a><h4>美国Maybelline美宝莲宝蓓爱炫彩护唇膏口红1.9g持久滋润</h4><p>￥32.00</p><span>45.00</span></li>
+					<li><a href=""><img src="imgs/xq-main-br4.jpg"/></a><h4>美国Maybelline美宝莲宝蓓爱炫彩护唇膏口红1.9g持久滋润</h4><p>￥32.00</p><span>45.00</span></li>
+					<li class="brb_end"><a href=""><img src="imgs/xq-main-br5.jpg"/></a><h4>美国Maybelline美宝莲宝蓓爱炫彩护唇膏口红1.9g持久滋润</h4><p>￥32.00</p><span>45.00</span></li>
+				</ul>
+			</div>
+			<div class="main_br">
+				<div class="main_brt">
+					<img src="imgs/xq-main-redshu.jpg" class="redshu"/>
+					<span>美氏婷销量排行</span>
+					<a href="">More</a>
+				</div>
+				<ul class="main_brb">
+					<li><a href=""><img src="imgs/xq-main-br6.jpg"/></a><h4>美国Maybelline美宝莲宝蓓爱炫彩护唇膏口红1.9g持久滋润</h4><p>￥32.00</p><span>45.00</span></li>
+					<li><a href=""><img src="imgs/xq-main-br7.jpg"/></a><h4>美国Maybelline美宝莲宝蓓爱炫彩护唇膏口红1.9g持久滋润</h4><p>￥32.00</p><span>45.00</span></li>
+					<li><a href=""><img src="imgs/xq-main-br8.jpg"/></a><h4>美国Maybelline美宝莲宝蓓爱炫彩护唇膏口红1.9g持久滋润</h4><p>￥32.00</p><span>45.00</span></li>
+					<li><a href=""><img src="imgs/xq-main-br9.jpg"/></a><h4>美国Maybelline美宝莲宝蓓爱炫彩护唇膏口红1.9g持久滋润</h4><p>￥32.00</p><span>45.00</span></li>
+					<li class="brb_end"><a href=""><img src="imgs/xq-main-br10.jpg"/></a><h4>美国Maybelline美宝莲宝蓓爱炫彩护唇膏口红1.9g持久滋润</h4><p>￥32.00</p><span>45.00</span></li>
+				</ul>
+			</div>
+
+		</main>
+		
+		<footer class="footer">
+			<div class="footer_l">
+				<ul>
+					<li><a href="">关于丽子</a>/</li>
+					<li><a href="">商家入驻</a>/</li>
+					<li><a href="">加入我们</a>/</li>
+					<li><a href="">配送政策</a>/</li>
+					<li><a href="">售后保障</a>/</li>
+					<li><a href="">帮助中心</a>/</li>
+					<li><a href="">联系我们</a>/</li>
+					<li><a href="">平台公告</a>/</li>
+					<li><a href="">友情链接</a></li>
+				</ul>
+				<p>Copyright &copy; 2009-2016,辛巴信息(杭州)技术有限公司LIZI.COM增值电信业务经营许可证：浙B2-20110315  备案号：浙ICP备11012845号-5</p>
+				<p>服务时间：09:00-23:00&nbsp;&nbsp;客服热线：400-106-6160<a href=""><img src="imgs/ghs.png"/>浙公网安备33010402001635号</a></p>  				
+				<ul>
+					<li><a href="">米折网</a></li>
+					<li><a href="">一号店</a></li>
+					<li><a href="">国美在线</a></li>
+					<li><a href="">韩都衣舍</a></li>
+					<li><a href="">优购物</a></li>
+					<li><a href="">寺库网</a></li>
+					<li><a href="">海尔商城</a></li>
+					<li><a href="">比价网</a></li>
+					<li><a href="">挖东西</a></li>
+					<li><a href="">卷皮网</a></li>
+					<li><a href="">视客眼镜网</a></li>
+					<li><a href="">尚品网</a></li>
+					<li><a href="">飞牛网</a></li>
+					<li><a href="">悦美整形网</a></li>
+				</ul>
+				<a href=""><img src="imgs/flogo-jindian.png" class="tp"/></a>
+				<a href=""><img src="imgs/flogo-picc.png" class="tp"/></a>
+				<a href=""><img src="imgs/flogo-xinyong.png" class="tp"/></a>
+			</div>
+			<div class="footer_t">
+				<img src="imgs/erweima.png"/>
+				<img src="imgs/weixin.jpg" class="wx"/>
+				<p>扫描关注微信公众号</p>
+			</div>
+			<a href="" class="footer_r">
+				<img src="imgs/fapp.jpg"/>
+				<p>APP</p>
+				<p>手机客户端下载</p>
+			</a>
+		</footer>
+	</body>
+</html>

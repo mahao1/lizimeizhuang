@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript" src="js/jquery.js" ></script>
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+			var setTime;
+			var time = parseInt($("#time").text());
+			setTime = setInterval(function(){
+				if(time <= 0){
+					clearInterval(setTime);
+					return;
+				}
+				time--;
+				$("#time").text(time);
+			},1000);
+			
+		});
+	</script>
+	<body>
+		<span id="time">60s</span>
+	</body>
+</html>

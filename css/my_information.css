@@ -1,0 +1,138 @@
+
+/*main_r*/
+.main_r{
+	width: 965px;
+	float: right;
+	border: 1px solid #dedede;
+	background: #fff;
+	color: #34495e;
+}
+
+.main_r h4{
+	height: 32;
+	line-height: 32px;
+	color: #34495e;
+	font-weight: 400;
+	font-size: 18px;
+	padding: 16px 20px;
+	position: relative;
+	border-bottom: 1px solid #dedede;	
+}
+
+.main_rb{
+	width: 100%;
+	font-size: 14px;
+}
+.main_rb ul{
+	line-height: 25px;
+}
+.main_rb ul li{
+	position: relative;
+	padding: 8px 0 8px 90px;
+}
+.main_rb ul li lable{
+	position: absolute;
+	left: 25px;
+	top: 8px;
+	text-align: left;
+	display: inline-block;
+	width: 60px;
+}
+.totle{
+	width: 177px;
+	height: 22px;
+	border: 1px solid #e6d08a;
+	border-radius: 2px;
+	position: relative;
+	display: inline-block;
+}
+.totle span{
+	position: absolute;
+	display: block;
+	width: 100%;
+	left: 0;
+	top: 0;
+	color: #333;
+	line-height: 20px;
+	text-align: center;
+}
+.totle span em{
+	font-style: normal;
+	color: #ff666b;
+	font-weight: bold;
+	
+}
+.user_rank a{
+	display: inline-block;
+	color: #ff666b;
+	margin-left: 15px;
+}
+.iface{
+	margin-bottom: 20px;
+}
+.face{
+	display: block;
+	width: 100px;
+	height: 100px;
+	border: 1px solid #e4e4e4;
+	position: relative;
+}
+.iface a{
+	position: absolute;
+	height: 20px;
+	line-height: 20px;
+	width: 100px;
+	display: block;
+	background: rgba(0,0,0,.5);
+	color: #fff;
+	text-align: center;
+}
+.txt{
+	width: 200px;
+	height: 30px;
+	font-size: 12px;
+}
+.main.txt{
+	display: inline-block;
+	font-size: 12px;
+	color: #34495e;
+	padding: 7px 8px;
+	height: 16px;
+	overflow: hidden;
+	border: 1px solid #ddd;
+	border-top-color: #ccc;
+	box-shadow: 0 1px 3px rgba(200,200,200,.3) inset;
+}
+.sex{
+	margin-right: 5px;
+}
+.main_rb ul li option{	
+	margin-right: 5px;
+	height: 30px;
+	font-size: 12px;
+	color: #34495e;
+	padding: 6px 4px;
+	border: 1px solid #ddd;
+	border-top-color: #ccc;
+	box-shadow: 0 1px 3px rgba(200,200,200,.3) inset;
+}
+.submit{
+	width: 160px;
+	padding: 20px 0 20px 90px;
+}
+.submit .btn{
+	height: 30px;
+	line-height: 30px;
+	background: #ff666b;
+	border-radius: 2px;
+	color: #fff;
+	font-size: 14px;
+	text-align: center;
+	display: block;
+}
+.submit .btn:hover{
+	text-decoration: none;
+}
+
+
+

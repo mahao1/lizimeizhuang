@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/shangpinye.css"/>
+		<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css"/>
+
+	</head>		
+		
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script type="text/javascript">
+			
+			$(function(){
+				//移入关注我们显示隐藏
+				$(".gzh").mouseover(function(){
+					$(".guanzhu").show();
+				});
+				$(".gzh").mouseout(function(){
+					$(".guanzhu").hide();
+				});
+				//移入全部分类显示隐藏下拉菜单
+				$(".fenlei").hover(
+					function(){
+						$(".caidan").show();
+						$(".caidan").hover(
+							function(){
+								$(".caidan").show();
+							},function(){
+								$(".caidan").hide();
+							}
+						)
+					},function(){
+						$(".caidan").hide();
+					}
+				);
+				$(".renqi").css({"color":"#ff666b","border-bottom":"2px solid #ff666b"});
+			})
+		</script>
+	<body>
+		<header id="header">
+			<div class="header_r">				
+				<ul class="header_fr">
+					<li class="header_user">
+						<a href="denglu.html">登  录</a>
+						<s></s>
+						<a href="zhuce.html">免费注册</a>
+					</li>
+					<li class="header_guanzhu">
+						<a href="" class="gzh">关注我们</a>
+						<i class="iconfont arrow">&#xe635;</i>
+						<div class="guanzhu">
+							<a href=""><img src="imgs/sh-guanzhu-bg.jpg"/></a>
+						</div>
+					</li>
+					<li>
+						<a href="">帮助中心</a>
+					</li>
+					<li>
+						<a href=""><i class="iconfont arrow">&#xf00d6;</i>收藏丽子</a>
+					</li>
+				</ul>				
+			</div>			
+		</header>
+		
+		<!--side-->
+		<div class="side">
+			<ul class="side_top">
+				<li>
+					<a href="#" class="side_t">
+						<i class="iconfont">&#xe63c;</i>
+						<span>购物车</span>
+						<em class="side_cartnum">0</em>
+					</a>
+				</li>
+			</ul>	
+			<ul class="side_btm">
+		        <li class="consult">
+		        	<a href="#"><i class="iconfont">&#xe61e;</i></a>
+		        	<div class="side_left"><a href="">我的优惠券</a></div>
+		        </li>
+		        <li class="words">
+		        	<a href="#"><i class="iconfont">&#xe60f;</i></a>
+		            <div class="side_left"><a href="">我的丽子</a></div>
+		        </li>
+		        <li class="quote">
+		        	<a href="#"><i class="iconfont">&#xe615;</i></a>
+		            <div class="side_left side_ewm"><p>扫一扫，下载丽子APP</p><a href=""><img src="imgs/sh-lizi-2code.png"/></a></div>
+		        </li>
+		        <li class="qrcord">
+		        	<a href="shouye.html"><i class="iconfont">&#xe630;</i></a>
+		            <div class="side_left"><a href="shouye.html">返回首页</a></div>
+		        </li>
+		        <li class="return">
+		        	<a href="#header"><i class="iconfont">&#xe665;</i></a>
+		            <div class="side_left"><a href="#header">返回顶部</a></div>
+		        </li>
+		    </ul>
+		</div>
+		
+		<!--nav-->
+		<nav class="nav">
+			<div class="layout">
+				<a href="shouye.html"><img src="imgs/logo-08.png" class="logo" /></a>
+				<div class="nav_t">
+					<input type="text" class="search" placeholder="请输入商品或品牌" />
+					<ul>
+						<span>热搜榜：</span>
+						<li><a href="">悦诗风吟</a></li>
+						<li><a href="">面霜</a></li>
+						<li><a href="">兰芝</a></li>
+						<li><a href="">面膜</a></li>
+						<li><a href="">化妆水</a></li>
+						<li><a href="">唇膏/口红</a></li>
+						<li><a href="">BB霜</a></li>					
+					</ul>
+				</div>
+				<img src="imgs/search-btn.png" class="find" />
+				<div class="car">
+					<a href="" class="shop"><img src="imgs/sh-car.jpg" class="car"/>购物车<img src="imgs/sh-you.jpg" class="you"/></a>
+				</div>
+			</div>		
+		</nav>
+		
+		<!--menu-->
+		<div class="menu">
+			<div class="menu_t">
+				<div class="fenlei">
+					<img src="imgs/fenlei.jpg"/>
+					<a href="">全部商品分类</a>
+				</div>
+				<ul class="menu_r">
+					<li><a href="">60秒闪购</a></li>
+					<li><a href="">100%正品</a></li>
+					<li><a href="">手机丽子</a></li>
+				</ul>
+			</div>	
+
+			<div class="caidan">
+				<div class="shpin_l">
+					<ul class="ul_lt">
+						<p><a href="#">护肤</a></p>
+						<li><a href="#">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">防晒</a></li>
+						<li><a href="#">卸妆</a></li>
+						<li><a href="#">眼部护理</a></li>
+						<li><a href="#">面部精华</a></li>
+						<li><a href="#">乳液/面霜</a></li>					
+					</ul>
+					<ul class="ul_lb">
+						<p><a href="#">彩妆</a></p>
+						<li><a href="#">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+					</ul>
+				</div>
+				<div class="shpin_c">
+					<ul class="ul_rt">
+						<p><a href="#">日化清洁</a></p>
+						<li><a href="#">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">爽肤水</a></li>
+					</ul>
+					<ul class="ul_rc">
+						<p><a href="#">健康保养</a></p>
+						<li><a href="#">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">爽肤水</a></li>
+					</ul>
+					
+					<ul class="ul_rb">
+						<p><a href="#">化妆工具</a></p>
+						<li><a href="#">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">爽肤水</a></li>
+					</ul>
+				</div>
+				<div class="shpin_r">
+					<ul class="ul_r">
+						<li><img src="imgs/sh-pin1.jpg"/></li>
+						<li><img src="imgs/sh-pin2.jpg"/></li>
+						<li><img src="imgs/sh-pin3.jpg"/></li>
+						<li><img src="imgs/sh-pin4.jpg"/></li>
+						<li><img src="imgs/sh-pin5.jpg"/></li>
+						<li><img src="imgs/sh-pin6.jpg"/></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<!--main-->
+		<main class="main">
+			<div class="main_t1">
+				<span class="main_t1s">
+					<a href="shouye.html">首页</a>>
+					<a href="">全部</a>>
+				</span>
+				<a href="shangpinye_clear.html" class="ximian">洗面<em>x</em></a>
+				<a href="shangpinye_clear.html">清除全部</a>
+			</div>
+			<div class="main_t2">				
+				<dl>
+					<dt>功效：</dt>
+					<dd>
+						<div class="main_dd">
+							<div><a href="">补水保湿（64）</a></div>
+							<div><a href="">淡化色斑（2）</a></div>
+							<div><a href="">收缩毛孔（17）</a></div>
+							<div><a href="">祛痘/去粉刺（7）</a></div>
+							<div><a href="">舒缓肌肤（20）</a></div>
+							<div><a href="">淡化干纹（2）</a></div>
+							<div><a href="">去黑头（15）</a></div>
+							<div><a href="">去角质（9）</a></div>
+							<div><a href="">提亮肤色（6）</a></div>
+							<div><a href="">去痘印（5）</a></div>
+							<div><a href="">清洁（76）</a></div>
+							<div><a href="">定妆（1）</a></div>
+						</div>
+						<a href="" class="more"><span>更多</span><i class="iconfont">&#xe607;</i></a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>品牌：</dt>
+					<dd>
+						<div class="main_dd">
+							<div><a href="">莎娜/SANA（1）</a></div>
+							<div><a href="">雅诗兰黛/ESTEE LAUDER（1）</a></div>
+							<div><a href="">思亲肤/SKINFOOD（1）</a></div>
+							<div><a href="">莎娜/SANA（1）</a></div>
+							<div><a href="">雅诗兰黛/ESTEE LAUDER（1）</a></div>
+							<div><a href="">思亲肤/SKINFOOD（1）</a></div>
+							<div><a href="">莎娜/SANA（1）</a></div>
+							<div><a href="">雅诗兰黛/ESTEE LAUDER（1）</a></div>
+							<div><a href="">思亲肤/SKINFOOD（1）</a></div>
+							<div><a href="">莎娜/SANA（1）</a></div>
+							<div><a href="">雅诗兰黛/ESTEE LAUDER（1）</a></div>
+							<div><a href="">思亲肤/SKINFOOD（1）</a></div>
+						</div>
+						<a href="" class="more"><span>更多</span><i class="iconfont">&#xe607;</i></a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>价格：</dt>
+					<dd>
+						<div class="main_dd">
+							<div><a href="">99元以内（130）</a></div>
+							<div><a href="">100-199元（46）</a></div>
+							<div><a href="">200-299元（5）</a></div>
+							<div><a href="">300元以上（1）</a></div>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<div class="main_t3">
+				<a href="">
+					<span>销量</span>
+				</a>丨
+				<a href="" class="renqi">
+					<span>人气</span>
+				</a>丨
+				<a href="">
+					<span>价格</span>
+				</a>丨
+				<a href="">
+					<span>上新</span>
+				</a>
+			</div>
+			<div class="main_t4">
+				<ul class="main_list">
+					<li>
+						<a href=""><img src="imgs/spy_sp1.jpg" /><p class="text">英国THE BODY SHOP美体小铺茶树洁面胶250ml</p></a>
+						<p><span>￥89.00</span><span>已售367件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp2.jpg" /><p class="text">英国THE BODY SHOP美体小铺维E卸妆洁面乳200ml</p></a>
+						<p><span>￥68.00</span><span>已售85件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp3.jpg" /><p class="text">佰草集平衡洁面乳100ml</p></a>
+						<p><span>￥58.00</span><span>已售10件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp4.jpg" /><p class="text">凡茜仙人掌无S温和清洁补水保湿控油洗面奶126ml </p></a>
+						<p><span>￥49.00</span><span>已售5件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp5.jpg" /><p class="text">FREEPLUS芙丽芳丝净润洗面霜 100g 氨基酸洗面奶 补水控油</p></a>
+						<p><span>￥95.00</span><span>已售92件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp6.jpg" /><p class="text">日本石泽研究所 毛孔/毛穴抚子小苏打洁肤皂 面部身体均可用</p></a>
+						<p><span>￥98.00</span><span>已售0件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp7.jpg" /><p class="text">Nuxe/欧树蜂蜜洁面凝胶啫喱200ml温和舒缓洗面奶</p></a>
+						<p><span>￥78.00</span><span>已售35件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp8.jpg" /><p class="text">雅漾修红保湿洁面乳300ml女/男士洗面奶 法国专柜正品敏感红血</p></a>
+						<p><span>￥135.00</span><span>已售3件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp9.jpg" /><p class="text">日本Shiseido/资生堂洗颜专科洗面奶120g/ml*2支 温和清洁不紧绷</p></a>
+						<p><span>￥58.00</span><span>已售140件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp10.jpg" /><p class="text">Lancome兰蔻清滢洁面卸妆乳50ML 温和清洁卸妆液</p></a>
+						<p><span>￥25.00</span><span>已售11件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp11.jpg" /><p class="text">it's skin伊思晶钻蜗牛洗面奶洁面乳150ml</p></a>
+						<p><span>￥89.00</span><span>已售7件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp12.jpg" /><p class="text">日本资生堂洗颜专科洗面奶柔澈泡沫洁面乳男女深层清洁120g</p></a>
+						<p><span>￥38.00</span><span>已售11件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp13.jpg" /><p class="text">露仙天妮氨基酸净颜洗面奶</p></a>
+						<p><span>￥48.00</span><span>已售2件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp14.jpg" /><p class="text">专柜行货 韩国innisfree悦诗风吟 绿茶保湿洁面膏洗面奶洁面乳150ml</p></a>
+						<p><span>￥54.00</span><span>已售76件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp15.jpg" /><p class="text">韩国it's skin伊思晶钻蜗牛洗面奶150ml</p></a>
+						<p><span>￥89.00</span><span>已售25件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp16.jpg" /><p class="text">DMC/欣兰灰常干净氨基酸弱酸性洗颜乳清洁控油洗面奶80g洁面乳</p></a>
+						<p><span>￥69.00</span><span>已售1件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp17.jpg" /><p class="text">HABA洗面奶鲨烷保湿洁面乳100g深层清洁孕妇可用 </p></a>
+						<p><span>￥165.00</span><span>已售0件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp18.jpg" /><p class="text">韩国Innisfree悦诗风吟济州岛火山岩泥毛孔深层清洁洁面膏洗面奶</p></a>
+						<p><span>￥49.00</span><span>已售48件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp19.jpg" /><p class="text">韩国CHARMZONE婵真银杏天然泡沫洗面奶200g 深层清洁</p></a>
+						<p><span>￥60.00</span><span>已售14422件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp20.jpg" /><p class="text">日本Mentholatum曼秀雷敦男士乐肤洁控油清爽洁面乳100g祛痘</p></a>
+						<p><span>￥30.00</span><span>已售69件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp21.jpg" /><p class="text">韩国LANEIGE兰芝毛孔清皙泡沫洗面奶160ml 控油清洁 紧致皮肤</p></a>
+						<p><span>￥103.00</span><span>已售1117件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp22.jpg" /><p class="text">韩国Sulwhasoo雪花秀顺行洁颜泡沫洗面奶200ml 补水保湿深层清洁</p></a>
+						<p><span>￥261.00</span><span>已售28件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp23.jpg" /><p class="text">日本SHISEIDO资生堂 uno男士洁面乳130g </p></a>
+						<p><span>￥42.00</span><span>已售401件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp24.jpg" /><p class="text">韩国正品The face shop草本芦荟泡沫洁面膏洗面奶补水保湿女洁面</p></a>
+						<p><span>￥25.8.00</span><span>已售313件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp25.jpg" /><p class="text">科颜氏 高保湿洁面啫喱150ML 洁面乳洗面奶温和保湿</p></a>
+						<p><span>￥158.00</span><span>已售9件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp26.jpg" /><p class="text">韩国婵真银杏洗面奶补水美白保湿</p></a>
+						<p><span>￥50.76.00</span><span>已售58件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp27.jpg" /><p class="text">KOSE高丝 润肌精水透感洗颜霜125ml 洁面乳洗面奶滋润保湿</p></a>
+						<p><span>￥36.00</span><span>已售7件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp28.jpg" /><p class="text">美国CLINIQUE倩碧液体柔性洁面皂(滋润型)200ml18年3月到期</p></a>
+						<p><span>￥175.00</span><span>已售42件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp29.jpg" /><p class="text">韩国RE:CIPE莱斯璧有机舒缓洗面奶洁面泥100g 深层清洁</p></a>
+						<p><span>￥78.00</span><span>已售13件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp30.jpg" /><p class="text">日本Shiseido/资生堂洗颜专科洗面奶120g 温和清洁不紧绷</p></a>
+						<p><span>￥179.00</span><span>已售3件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp31.jpg" /><p class="text">DHC/蝶翠诗纯橄榄滋养皂90g 深层清洁保湿去黑头收缩毛孔</p></a>
+						<p><span>￥45.00</span><span>已售6件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp32.jpg" /><p class="text">韩国OSEQUE/澳晳可碳酸水洁面液120g 深层清洁温和保湿不紧绷</p></a>
+						<p><span>￥135.00</span><span>已售0件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp33.jpg" /><p class="text">日本 shuawa限量版海盐碳酸皂70g</p></a>
+						<p><span>￥109.00</span><span>已售1件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp34.jpg" /><p class="text">日本ALBION奥尔滨奥比虹清新活润泡沫洁面霜120g 滋润水嫩清洁</p></a>
+						<p><span>￥179.00</span><span>已售3件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp35.jpg" /><p class="text">英国BOOTS小黄瓜清爽洁洗面奶150ML深层清洁清爽保湿亮白</p></a>
+						<p><span>￥45.00</span><span>已售6件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp36.jpg" /><p class="text">韩国The Face Shop菲诗小铺每日草本柠檬泡沫洁面膏150g 限量版</p></a>
+						<p><span>￥39.00</span><span>已售0件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp37.jpg" /><p class="text">雅漾清爽洁肤凝胶加量300ml 控油祛痘 </p></a>
+						<p><span>￥120.00</span><span>已售12件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp38.jpg" /><p class="text">Avene 雅漾 雅漾柔润洁面摩丝 150ml 收紧毛孔 泡沫洁面</p></a>
+						<p><span>￥128.00</span><span>已售3件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp39.jpg" /><p class="text">innisfree悦诗风吟济州岛天然绿茶清爽洗面奶150ml</p></a>
+						<p><span>￥55.00</span><span>已售12件</span></p>
+					</li>
+					<li>
+						<a href=""><img src="imgs/spy_sp40.jpg" /><p class="text">innisfree悦诗风吟橄榄精华清洁泡沫洗面奶150ml</p></a>
+						<p><span>￥68.00</span><span>已售4件</span></p>
+					</li>
+				</ul>
+			</div>
+			<div class="main_t5">
+				<ul>
+					<li>
+						<span>1</span>
+						<a href="">2</a>
+						<a href="">3</a>
+						<a href="">4</a>
+						<a href="">5</a>
+						<a href="">下一页</a>
+					</li>
+				</ul>
+			</div>
+		</main>
+			
+		<!--footer-->
+		<footer class="footer">
+			<div class="footer_l">
+				<ul>
+					<li><a href="">关于丽子</a>/</li>
+					<li><a href="">商家入驻</a>/</li>
+					<li><a href="">加入我们</a>/</li>
+					<li><a href="">配送政策</a>/</li>
+					<li><a href="">售后保障</a>/</li>
+					<li><a href="">帮助中心</a>/</li>
+					<li><a href="">联系我们</a>/</li>
+					<li><a href="">平台公告</a>/</li>
+					<li><a href="">友情链接</a></li>
+				</ul>
+				<p>Copyright &copy; 2009-2016,辛巴信息(杭州)技术有限公司LIZI.COM增值电信业务经营许可证：浙B2-20110315  备案号：浙ICP备11012845号-5</p>
+				<p>服务时间：09:00-23:00&nbsp;&nbsp;客服热线：400-106-6160<a href=""><img src="imgs/ghs.png"/>浙公网安备33010402001635号</a></p>  				
+				<ul>
+					<li><a href="">米折网</a></li>
+					<li><a href="">一号店</a></li>
+					<li><a href="">国美在线</a></li>
+					<li><a href="">韩都衣舍</a></li>
+					<li><a href="">优购物</a></li>
+					<li><a href="">寺库网</a></li>
+					<li><a href="">海尔商城</a></li>
+					<li><a href="">比价网</a></li>
+					<li><a href="">挖东西</a></li>
+					<li><a href="">卷皮网</a></li>
+					<li><a href="">视客眼镜网</a></li>
+					<li><a href="">尚品网</a></li>
+					<li><a href="">飞牛网</a></li>
+					<li><a href="">悦美整形网</a></li>
+				</ul>
+				<a href=""><img src="imgs/flogo-jindian.png" class="tp"/></a>
+				<a href=""><img src="imgs/flogo-picc.png" class="tp"/></a>
+				<a href=""><img src="imgs/flogo-xinyong.png" class="tp"/></a>
+			</div>
+			<div class="footer_t">
+				<img src="imgs/erweima.png"/>
+				<img src="imgs/weixin.jpg" class="wx"/>
+				<p>扫描关注微信公众号</p>
+			</div>
+			<a href="" class="footer_r">
+				<img src="imgs/fapp.jpg"/>
+				<p>APP</p>
+				<p>手机客户端下载</p>
+			</a>
+		</footer>
+	</body>
+</html>

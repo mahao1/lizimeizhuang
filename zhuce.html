@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/zhuce.css"/>
+	
+	</head>
+	<script type="text/javascript" src="js/jquery.js" ></script>
+	<script type="text/javascript">
+		//test()方法 判断字符串中是否匹配到正则表达式内容，返回的是boolean值 ( true / false )
+		$(function(){
+			var ok1=false;
+            var ok2=false;
+            var ok3=false;
+			
+			function iPhone(phone){
+				var myreg = /^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/;
+				return myreg.test(phone);
+			}
+			function iPassword(password){
+				var pswd = /(?!^\d+$)(?!^[a-zA-Z]+$)[0-9a-zA-Z]{8,}/;//密码至少八个字母加数字的字符,
+				return pswd.test(password);
+			}
+
+			function yanzheng(){
+				//验证手机号
+				if(iPhone($(".zc_phone").val().length == 11 && $(".zc_phone").val() != "")){
+					ok1 = true;
+				}else{					
+					if(iPhone($(".zc_phone").val()) == false){
+						alert("请输入正确的手机号！");
+					}
+				}
+				
+				//验证密码
+				if(iPassword($(".zc_password").val().length >= 8)){
+					ok2 = true;
+				}else{
+					if(iPassword($(".zc_password").val()) == false){
+						alert("请设置至少8位字母与数字组合的字符的密码");
+					}
+				}
+				
+				//验证确认密码
+				if($(".zc_repassword").val().length >= 8 && $(".zc_repassword").val() == $(".zc_password").val()){
+					ok3 = true;
+				}else{					
+					alert("两次输入密码不一致");
+				}
+			}
+			$(".agree").click(function(){
+				yanzheng();
+				alert("注册成功");				
+			})
+			
+		})
+	</script>
+	
+	<body>
+		<!--header-->
+		<header class="header">
+			<div class="layout">
+				<a href="shouye.html"><img src="imgs/dl-login-logo.png" class="logo" /></a>
+				<a href="shouye.html" class="header_l">丽子首页</a>
+				<p>0527-80203555</p>
+				<a href="" class="header_r"><img src="imgs/zhuce-qie.jpg"/>在线咨询</a>					
+			</div>			
+		</header>
+		
+		<!--main-->
+		<main class="main">
+			<div class="main_c">
+				<img src="imgs/dl-login-box-bg.jpg" class="main_ctp"/>
+				<div class="main_r">
+					<h2>
+						<div class="trig">
+							已有账号？<a href="denglu.html">点击登录</a>
+						</div>
+						注册
+					</h2>
+					<div class="main_rc">
+						<ul>
+							<li class="rc_li">								
+								<input type="text" class="text zc_phone" value="" placeholder="手机"/>
+							</li>
+							<li class="rc_li">								
+								<input type="text" class="text zc_password" value="" placeholder="密码"/>
+							</li>
+							<li class="rc_li">							
+								<input type="text" class="text zc_repassword" value="" placeholder="确认密码"/>
+							</li>
+							<li class="rc_li rc_sort">								
+								<input type="text" class="text text_l" value="" placeholder="短信验证"/>								
+							</li>
+							<li class="rc_li rc_senddx">
+								<a href="" class="rc_send">发送短信验证码</a>
+							</li>
+							<li class="rc_li yread">
+								<input type="checkbox" />我已阅读并接受
+								<a href="#">《丽子服务协议》</a>
+							</li>
+							
+							<a href="" class="agree">同意协议并注册</a>
+							
+						</ul>
+					</div>
+					
+				</div>
+				
+			</div>			
+		</main>
+		<div class="phone_error">
+			<div class="error_t">
+				<em>！</em>
+				<span>请输入正确的手机号！</span>
+			</div>
+			<div class="error_b">
+				<a href="" class="sure">确定</a>
+			</div>
+		</div>
+		<div class="password_error">
+			<div class="error_t">
+				<em>！</em>
+				<span>请设置至少8位字符的密码</span>
+			</div>
+			<div class="error_b">
+				<a href="" class="sure">确定</a>
+			</div>
+		</div>
+		<div class="success">
+			<div class="error_t">
+				<span>注册成功</span>
+			</div>
+			<div class="error_b">
+				<a href="" class="sure">确定</a>
+			</div>
+		</div>
+		<!--footer-->
+		<footer class="footer">
+			<div class="footer_l">
+				<ul>
+					<li><a href="">关于丽子</a>/</li>
+					<li><a href="">商家入驻</a>/</li>
+					<li><a href="">加入我们</a>/</li>
+					<li><a href="">配送政策</a>/</li>
+					<li><a href="">售后保障</a>/</li>
+					<li><a href="">帮助中心</a>/</li>
+					<li><a href="">联系我们</a>/</li>
+					<li><a href="">平台公告</a>/</li>
+					<li><a href="">友情链接</a></li>
+				</ul>
+				<p>Copyright &copy; 2009-2016,辛巴信息(杭州)技术有限公司LIZI.COM增值电信业务经营许可证：浙B2-20110315  备案号：浙ICP备11012845号-5</p>
+				<p>服务时间：09:00-23:00&nbsp;&nbsp;客服热线：400-106-6160<a href=""><img src="imgs/ghs.png"/>浙公网安备33010402001635号</a></p>  				
+				<ul>
+					<li><a href="">米折网</a></li>
+					<li><a href="">一号店</a></li>
+					<li><a href="">国美在线</a></li>
+					<li><a href="">韩都衣舍</a></li>
+					<li><a href="">优购物</a></li>
+					<li><a href="">寺库网</a></li>
+					<li><a href="">海尔商城</a></li>
+					<li><a href="">比价网</a></li>
+					<li><a href="">挖东西</a></li>
+					<li><a href="">卷皮网</a></li>
+					<li><a href="">视客眼镜网</a></li>
+					<li><a href="">尚品网</a></li>
+					<li><a href="">飞牛网</a></li>
+					<li><a href="">悦美整形网</a></li>
+				</ul>
+				<a href=""><img src="imgs/flogo-jindian.png" class="tp"/></a>
+				<a href=""><img src="imgs/flogo-picc.png" class="tp"/></a>
+				<a href=""><img src="imgs/flogo-xinyong.png" class="tp"/></a>
+			</div>
+			<div class="footer_t">
+				<img src="imgs/zhce-erweima.png"/>
+				<img src="imgs/weixin.jpg" class="wx"/>
+				<p>扫描关注微信公众号</p>
+			</div>
+			<a href="" class="footer_r">
+				<img src="imgs/fapp.jpg"/>
+				<p>APP</p>
+				<p>手机客户端下载</p>
+			</a>
+		</footer>
+	</body>
+</html>

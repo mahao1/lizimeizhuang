@@ -1,0 +1,1911 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/shy.css"/>
+		<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="css/sh-main.css"/>
+	</head>		
+		
+		<script src="js/object.js"></script>
+		<script type="text/javascript" src="js/lbt.js" ></script>
+		<script type="text/javascript" src="js/lbtt.js" ></script>
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script type="text/javascript">
+			
+			window.onload = function(evt){
+				var e = evt || window.event;
+				//轮播图
+				new Slider("banner");
+				new Slide("meng");			
+			}
+			$(function(){
+				//移入关注我们显示隐藏
+				$(".gzh").mouseover(function(){
+					$(".guanzhu").show();
+				});
+				$(".gzh").mouseout(function(){
+					$(".guanzhu").hide();
+				});
+				//移入全部分类显示隐藏下拉菜单
+				$(".fenlei").hover(
+					function(){
+						$(".caidan").show();
+						$(".caidan").hover(
+							function(){
+								$(".caidan").show();
+							},function(){
+								$(".caidan").hide();
+							}
+						)
+					},function(){
+						$(".caidan").hide();
+					}
+				);
+				//滚动到一定高度，楼梯对应相应标题
+				$(window).bind("scroll", function () {  
+	                var sTop = $(window).scrollTop();  
+	                var sTop = parseInt(sTop);  
+	                if (sTop >= 950 && sTop <= 18500) {  
+	                    $(".louti").show();
+	                    if(sTop > 950 && sTop < 1050){	                    	$(".lou1").css({"color":"#fff","background":"#ff666b"});
+	$(".lou2").css({"color":"#333","background":"none"});
+	$(".lou3").css({"color":"#333","background":"none"});
+	$(".lou4").css({"color":"#333","background":"none"});
+		                }else if(sTop >=1050 && sTop < 3100){
+	$(".lou1").css({"color":"#333","background":"none"});	                 	$(".lou2").css({"color":"#fff","background":"#ff666b"});
+	$(".lou3").css({"color":"#333","background":"none"});
+	$(".lou4").css({"color":"#333","background":"none"});
+		                }else if(sTop >= 3100 && sTop < 5100){
+	$(".lou1").css({"color":"#333","background":"none"});	                 	$(".lou2").css({"color":"#333","background":"none"});
+	$(".lou3").css({"color":"#fff","background":"#ff666b"});
+	$(".lou4").css({"color":"#333","background":"none"});	
+		                }else if(sTop >= 5100){
+	$(".lou1").css({"color":"#333","background":"none"});	                 	$(".lou2").css({"color":"#333","background":"none"});
+	$(".lou3").css({"color":"#333","background":"none"});
+	$(".lou4").css({"color":"#fff","background":"#ff666b"});	                	
+		                }
+	                }else{	                	
+		                $(".louti").hide();	                	
+		            }  
+	            });
+			})
+		</script>
+	<body>
+		<!--header-->
+		<header id="header">
+			<div class="header_r">				
+				<ul class="header_fr">
+					<li class="header_user">
+						<a href="denglu.html">登  录</a>
+						<s></s>
+						<a href="zhuce.html">免费注册</a>
+					</li>
+					<li class="header_guanzhu">
+						<a href="" class="gzh">关注我们</a>
+						<i class="iconfont arrow">&#xe635;</i>
+						<div class="guanzhu">
+							<a href=""><img src="imgs/sh-guanzhu-bg.jpg"/></a>
+						</div>
+					</li>
+					<li>
+						<a href="">帮助中心</a>
+					</li>
+					<li>
+						<a href=""><i class="iconfont arrow">&#xf00d6;</i>收藏丽子</a>
+					</li>
+				</ul>				
+			</div>			
+		</header>
+		
+		<!--side-->
+		<div class="side">
+			<ul class="side_top">
+				<li>
+					<a href="#" class="side_t">
+						<i class="iconfont">&#xe63c;</i>
+						<span>购物车</span>
+						<em class="side_cartnum">0</em>
+					</a>
+				</li>
+			</ul>	
+			<ul class="side_btm">
+		        <li class="consult">
+		        	<a href="#"><i class="iconfont">&#xe61e;</i></a>
+		        	<div class="side_left"><a href="">我的优惠券</a></div>
+		        </li>
+		        <li class="words">
+		        	<a href="#"><i class="iconfont">&#xe60f;</i></a>
+		            <div class="side_left"><a href="">我的丽子</a></div>
+		        </li>
+		        <li class="quote">
+		        	<a href="#"><i class="iconfont">&#xe615;</i></a>
+		            <div class="side_left side_ewm"><p>扫一扫，下载丽子APP</p><a href=""><img src="imgs/sh-lizi-2code.png"/></a></div>
+		        </li>
+		        <li class="qrcord">
+		        	<a href="shouye.html"><i class="iconfont">&#xe630;</i></a>
+		            <div class="side_left"><a href="shouye.html">返回首页</a></div>
+		        </li>
+		        <li class="return">
+		        	<a href="#header"><i class="iconfont">&#xe665;</i></a>
+		            <div class="side_left"><a href="#header">返回顶部</a></div>
+		        </li>
+		    </ul>
+		</div>
+		
+		<!--louti-->
+		<div class="louti">
+			<a  href="#main_t" class="lou1"><i class="iconfont">&#xe6be;</i><p>闪购</p></a>				
+			<a  href="#main_ct" class="lou2"><i class="iconfont">&#xe609;</i><p>热门活动</p></a>
+			<a  href="#main_cc" class="lou3"><i class="iconfont">&#xe6e0;</i><p>人气爆款</p></a>
+			<a  href="#main_cb" class="lou4"><i class="iconfont">&#xe713;</i><p>分类推荐</p></a>
+		</div>
+		
+		<!--nav-->
+		<nav class="nav">
+			<div class="layout">
+				<img src="imgs/logo-08.png" class="logo" />
+				<div class="nav_t">
+					<input type="text" class="search" placeholder="请输入商品或品牌" />
+					<ul>
+						<span>热搜榜：</span>
+						<li><a href="">悦诗风吟</a></li>
+						<li><a href="">面霜</a></li>
+						<li><a href="">兰芝</a></li>
+						<li><a href="">面膜</a></li>
+						<li><a href="">化妆水</a></li>
+						<li><a href="">唇膏/口红</a></li>
+						<li><a href="">BB霜</a></li>					
+					</ul>
+				</div>
+				<img src="imgs/search-btn.png" class="find" />
+				<div class="car">
+					<a href="" class="shop"><img src="imgs/sh-car.jpg" class="car"/>购物车<img src="imgs/sh-you.jpg" class="you"/></a>
+				</div>
+			</div>		
+		</nav>
+		
+		<!--main-->
+		<div class="menu">
+			<div class="menu_t">
+				<div class="fenlei">
+					<img src="imgs/fenlei.jpg"/>
+					<a href="">全部商品分类</a>
+				</div>
+				<ul class="menu_r">
+					<li><a href="">60秒闪购</a></li>
+					<li><a href="">100%正品</a></li>
+					<li><a href="">手机丽子</a></li>
+				</ul>
+			</div>	
+
+			<div class="caidan">
+				<div class="shpin_l">
+					<ul class="ul_lt">
+						<p><a href="#">护肤</a></p>
+						<li><a href="shangpinye.html">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">防晒</a></li>
+						<li><a href="#">卸妆</a></li>
+						<li><a href="#">眼部护理</a></li>
+						<li><a href="#">面部精华</a></li>
+						<li><a href="#">乳液/面霜</a></li>					
+					</ul>
+					<ul class="ul_lb">
+						<p><a href="#">彩妆</a></p>
+						<li><a href="#">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+					</ul>
+				</div>
+				<div class="shpin_c">
+					<ul class="ul_rt">
+						<p><a href="#">日化清洁</a></p>
+						<li><a href="#">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">爽肤水</a></li>
+					</ul>
+					<ul class="ul_rc">
+						<p><a href="#">健康保养</a></p>
+						<li><a href="#">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">爽肤水</a></li>
+					</ul>
+					
+					<ul class="ul_rb">
+						<p><a href="#">化妆工具</a></p>
+						<li><a href="#">洗面</a></li>
+						<li><a href="#">爽肤水</a></li>
+						<li><a href="#">爽肤水</a></li>
+					</ul>
+				</div>
+				<div class="shpin_r">
+					<ul class="ul_r">
+						<li><img src="imgs/sh-pin1.jpg"/></li>
+						<li><img src="imgs/sh-pin2.jpg"/></li>
+						<li><img src="imgs/sh-pin3.jpg"/></li>
+						<li><img src="imgs/sh-pin4.jpg"/></li>
+						<li><img src="imgs/sh-pin5.jpg"/></li>
+						<li><img src="imgs/sh-pin6.jpg"/></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<!--banner-->
+		<div id="banner" class="container">
+			<ul id="ul">
+				<li><a href = "#" ><img src = "imgs/sh-banner1.jpg"/</a></li>
+				<li><a href = "#" ><img src = "imgs/sh-banner2.jpg"/</a></li>
+				<li><a href = "#" ><img src = "imgs/sh-banner3.jpg"/</a></li>
+				<li><a href = "#" ><img src = "imgs/sh-banner4.jpg"/</a></li>
+			</ul>		
+		</div>
+		
+		<!--main-->
+		<main>
+			<div class="main layout">
+				<a href="" class="four"><img src="imgs/sh-webintro.png" class="webin"/></a>
+				<div class="main_t" id="main_t">
+					<img src="imgs/60s-hd2.png" class="mg"/>	
+				</div>
+				
+				<div id="meng" class="gou">
+					<ul id="ul">
+						<li>
+							<a href="#" class="main_tl">
+								<img src="imgs/sh-60s-lb1.jpg" />
+								<div class="main_tlb">
+									<p><span>好评如潮</span><span>韩国pony effect memebox自然双头染眉膏6g防水持久</span></p>
+									<h1>39.00</h1>
+									<p class="price">市场价：￥141.00</p>
+									<p>立即抢购</p>
+								</div>					
+							</a>
+							<a href="#" class="main_tl">
+								<img src="imgs/sh-60s-lb2.jpg" />
+								<div class="main_tlb">
+									<p><span>好评如潮</span><span>韩国pony effect memebox自然双头染眉膏6g防水持久</span></p>
+									<h1>39.00</h1>
+									<p class="price">市场价：￥141.00</p>
+									<p>立即抢购</p>
+								</div>					
+							</a>
+							<a href="#" class="main_tl main_last">
+								<img src="imgs/sh-60s-lb3.jpg" />
+								<div class="main_tlb">
+									<p><span>好评如潮</span><span>韩国pony effect memebox自然双头染眉膏6g防水持久</span></p>
+									<h1>39.00</h1>
+									<p class="price">市场价：￥141.00</p>
+									<p>立即抢购</p>
+								</div>					
+							</a>
+						</li>
+						
+						<li>
+							<a href="#" class="main_tl">
+								<img src="imgs/sh-60s-lb4.jpg" />
+								<div class="main_tlb">
+									<p><span>好评如潮</span><span>韩国pony effect memebox自然双头染眉膏6g防水持久</span></p>
+									<h1>39.00</h1>
+									<p class="price">市场价：￥141.00</p>
+									<p>立即抢购</p>
+								</div>					
+							</a>
+							<a href="#" class="main_tl">
+								<img src="imgs/sh-60s-lb5.jpg" />
+								<div class="main_tlb">
+									<p><span>好评如潮</span><span>韩国pony effect memebox自然双头染眉膏6g防水持久</span></p>
+									<h1>39.00</h1>
+									<p class="price">市场价：￥141.00</p>
+									<p>立即抢购</p>
+								</div>					
+							</a>
+							<a href="#" class="main_tl main_last">
+								<img src="imgs/sh-60s-lb6.jpg" />
+								<div class="main_tlb">
+									<p><span>好评如潮</span><span>韩国pony effect memebox自然双头染眉膏6g防水持久</span></p>
+									<h1>39.00</h1>
+									<p class="price">市场价：￥141.00</p>
+									<p>立即抢购</p>
+								</div>					
+							</a>
+						</li>
+						<li>
+							<a href="#" class="main_tl">
+								<img src="imgs/sh-60s-lb7.jpg" />
+								<div class="main_tlb">
+									<p><span>好评如潮</span><span>韩国pony effect memebox自然双头染眉膏6g防水持久</span></p>
+									<h1>39.00</h1>
+									<p class="price">市场价：￥141.00</p>
+									<p>立即抢购</p>
+								</div>					
+							</a>
+							<a href="#" class="main_tl">
+								<img src="imgs/sh-60s-lb8.jpg" />
+								<div class="main_tlb">
+									<p><span>好评如潮</span><span>韩国pony effect memebox自然双头染眉膏6g防水持久</span></p>
+									<h1>39.00</h1>
+									<p class="price">市场价：￥141.00</p>
+									<p>立即抢购</p>
+								</div>					
+							</a>
+							<a href="#" class="main_tl main_last">
+								<img src="imgs/sh-60s-lb9.jpg" />
+								<div class="main_tlb">
+									<p><span>好评如潮</span><span>韩国pony effect memebox自然双头染眉膏6g防水持久</span></p>
+									<h1>39.00</h1>
+									<p class="price">市场价：￥141.00</p>
+									<p>立即抢购</p>
+								</div>					
+							</a>
+						</li>
+						<li>
+							<a href="#" class="main_tl">
+								<img src="imgs/sh-60s-lb10.jpg" />
+								<div class="main_tlb">
+									<p><span>好评如潮</span><span>韩国pony effect memebox自然双头染眉膏6g防水持久</span></p>
+									<h1>39.00</h1>
+									<p class="price">市场价：￥141.00</p>
+									<p>立即抢购</p>
+								</div>					
+							</a>
+							<a href="#" class="main_tl">
+								<img src="imgs/sh-60s-lb11.jpg" />
+								<div class="main_tlb">
+									<p><span>好评如潮</span><span>韩国pony effect memebox自然双头染眉膏6g防水持久</span></p>
+									<h1>39.00</h1>
+									<p class="price">市场价：￥141.00</p>
+									<p>立即抢购</p>
+								</div>					
+							</a>
+							<a href="#" class="main_tl main_last">
+								<img src="imgs/sh-60s-lb12.jpg" />
+								<div class="main_tlb">
+									<p><span>好评如潮</span><span>韩国pony effect memebox自然双头染眉膏6g防水持久</span></p>
+									<h1>39.00</h1>
+									<p class="price">市场价：￥141.00</p>
+									<p>立即抢购</p>
+								</div>					
+							</a>
+						</li>
+						<li>
+							<a href="#" class="main_tl">
+								<img src="imgs/sh-60s-lb13.jpg" />
+								<div class="main_tlb">
+									<p><span>好评如潮</span><span>韩国pony effect memebox自然双头染眉膏6g防水持久</span></p>
+									<h1>39.00</h1>
+									<p class="price">市场价：￥141.00</p>
+									<p>立即抢购</p>
+								</div>					
+							</a>
+							<a href="#" class="main_tl">
+								<img src="imgs/sh-60s-lb14.jpg" />
+								<div class="main_tlb">
+									<p><span>好评如潮</span><span>韩国pony effect memebox自然双头染眉膏6g防水持久</span></p>
+									<h1>39.00</h1>
+									<p class="price">市场价：￥141.00</p>
+									<p>立即抢购</p>
+								</div>					
+							</a>
+							<a href="#" class="main_tl main_last">
+								<img src="imgs/sh-60s-lb15.jpg" />
+								<div class="main_tlb">
+									<p><span>好评如潮</span><span>韩国pony effect memebox自然双头染眉膏6g防水持久</span></p>
+									<h1>39.00</h1>
+									<p class="price">市场价：￥141.00</p>
+									<p>立即抢购</p>
+								</div>					
+							</a>
+						</li>
+					</ul>					
+				</div>
+				
+				<div class="main_ct" id="main_ct">
+					<div class="main_ctt">
+						<h1>热门活动</h1>
+						<p>只要您满意就无条件退货</p>
+					</div>
+					<a href="#" class="hot">
+						<img src="imgs/sh-hot1.jpg" class="hot_l"/>
+						<img src="imgs/sh-hot2.jpg" class="hot_r"/>
+					</a>
+					<a href="#" class="hot">
+						<img src="imgs/sh-hot3.jpg" class="hot_l"/>
+						<img src="imgs/sh-hot4.jpg" class="hot_r"/>
+					</a>
+					<a href="#" class="hot">
+						<img src="imgs/sh-hot5.jpg" class="hot_l"/>
+						<img src="imgs/sh-hot6.jpg" class="hot_r"/>
+					</a>
+					<a href="#" class="hot">
+						<img src="imgs/sh-hot7.jpg" class="hot_l"/>
+						<img src="imgs/sh-hot8.jpg" class="hot_r"/>
+					</a>
+					<a href="#" class="hot">
+						<img src="imgs/sh-hot9.jpg" class="hot_l"/>
+						<img src="imgs/sh-hot10.jpg" class="hot_r"/>
+					</a>
+				</div>
+				
+				<div class="main_cc" id="main_cc">
+					<div class="main_ctt">
+						<h1>人气爆款</h1>
+						<p>100%低价  100%信赖  100%正品</p>
+					</div>
+					<div class="main_boom">
+						<div class="main_boom_l">
+							<a href="xiangqingye.html"><img src="imgs/sh-boom-1.jpg" /></a>
+							<a href="xiangqingye.html" class="lta">泰国Mistine dream咬唇妆唇彩口红染唇液  保湿显色持久</a>
+							<p class="fp">￥<span>65.00</span> <span>￥86.00</span><img src="imgs/sh-huo.jpg" /> <span>66</span></p>
+							<p><img src="imgs/sh-time.jpg" class="time"/></p>
+							<a href="#" class="mai">立即购买</a>
+						</div>
+						<div class="main_boom_l">
+							<a href="#"><img src="imgs/sh-boom-2.jpg" /></a>
+							<a href="#" class="lta">泰国Mistine dream咬唇妆唇彩口红染唇液  保湿显色持久</a>
+							<p class="fp">￥<span>65.00</span> <span>￥86.00</span><img src="imgs/sh-huo.jpg" /> <span>66</span></p>
+							<p><img src="imgs/sh-time.jpg" class="time"/></p>
+							<a href="#" class="mai">立即购买</a>
+						</div>
+						<div class="main_boom_l">
+							<a href="#"><img src="imgs/sh-boom-3.jpg" /></a>
+							<a href="#" class="lta">泰国Mistine dream咬唇妆唇彩口红染唇液  保湿显色持久</a>
+							<p class="fp">￥<span>65.00</span> <span>￥86.00</span><img src="imgs/sh-huo.jpg" /> <span>66</span></p>
+							<p><img src="imgs/sh-time.jpg" class="time"/></p>
+							<a href="#" class="mai">立即购买</a>
+						</div>
+						<div class="main_boom_l blast">
+							<a href="#"><img src="imgs/sh-boom-4.jpg" /></a>
+							<a href="#" class="lta">泰国Mistine dream咬唇妆唇彩口红染唇液  保湿显色持久</a>
+							<p class="fp">￥<span>65.00</span> <span>￥86.00</span><img src="imgs/sh-huo.jpg" /> <span>66</span></p>
+							<p><img src="imgs/sh-time.jpg" class="time"/></p>
+							<a href="#" class="mai">立即购买</a>
+						</div>
+						
+					</div>
+					<div class="main_boom">
+						<div class="main_boom_l">
+							<a href="#"><img src="imgs/sh-boom-5.jpg" /></a>
+							<a href="#" class="lta">泰国Mistine dream咬唇妆唇彩口红染唇液  保湿显色持久</a>
+							<p class="fp">￥<span>65.00</span> <span>￥86.00</span><img src="imgs/sh-huo.jpg" /> <span>66</span></p>
+							<p><img src="imgs/sh-time.jpg" class="time"/></p>
+							<a href="#" class="mai">立即购买</a>
+						</div>
+						<div class="main_boom_l">
+							<a href="#"><img src="imgs/sh-boom-6.jpg" /></a>
+							<a href="#" class="lta">泰国Mistine dream咬唇妆唇彩口红染唇液  保湿显色持久</a>
+							<p class="fp">￥<span>65.00</span> <span>￥86.00</span><img src="imgs/sh-huo.jpg" /> <span>66</span></p>
+							<p><img src="imgs/sh-time.jpg" class="time"/></p>
+							<a href="#" class="mai">立即购买</a>
+						</div>
+						<div class="main_boom_l">
+							<a href="#"><img src="imgs/sh-boom-7.jpg" /></a>
+							<a href="#" class="lta">泰国Mistine dream咬唇妆唇彩口红染唇液  保湿显色持久</a>
+							<p class="fp">￥<span>65.00</span> <span>￥86.00</span><img src="imgs/sh-huo.jpg" /> <span>66</span></p>
+							<p><img src="imgs/sh-time.jpg" class="time"/></p>
+							<a href="#" class="mai">立即购买</a>
+						</div>
+						<div class="main_boom_l blast">
+							<a href="#"><img src="imgs/sh-boom-8.jpg" /></a>
+							<a href="#" class="lta">泰国Mistine dream咬唇妆唇彩口红染唇液  保湿显色持久</a>
+							<p class="fp">￥<span>65.00</span> <span>￥86.00</span><img src="imgs/sh-huo.jpg" /> <span>66</span></p>
+							<p><img src="imgs/sh-time.jpg" class="time"/></p>
+							<a href="#" class="mai">立即购买</a>
+						</div>
+						
+					</div>
+					<div class="main_boom">
+						<div class="main_boom_l">
+							<a href="#"><img src="imgs/sh-boom-9.jpg" /></a>
+							<a href="#" class="lta">泰国Mistine dream咬唇妆唇彩口红染唇液  保湿显色持久</a>
+							<p class="fp">￥<span>65.00</span> <span>￥86.00</span><img src="imgs/sh-huo.jpg" /> <span>66</span></p>
+							<p><img src="imgs/sh-time.jpg" class="time"/></p>
+							<a href="#" class="mai">立即购买</a>
+						</div>
+						<div class="main_boom_l">
+							<a href="#"><img src="imgs/sh-boom-10.jpg" /></a>
+							<a href="#" class="lta">泰国Mistine dream咬唇妆唇彩口红染唇液  保湿显色持久</a>
+							<p class="fp">￥<span>65.00</span> <span>￥86.00</span><img src="imgs/sh-huo.jpg" /> <span>66</span></p>
+							<p><img src="imgs/sh-time.jpg" class="time"/></p>
+							<a href="#" class="mai">立即购买</a>
+						</div>
+						<div class="main_boom_l">
+							<a href="#"><img src="imgs/sh-boom-11.jpg" /></a>
+							<a href="#" class="lta">泰国Mistine dream咬唇妆唇彩口红染唇液  保湿显色持久</a>
+							<p class="fp">￥<span>65.00</span> <span>￥86.00</span><img src="imgs/sh-huo.jpg" /> <span>66</span></p>
+							<p><img src="imgs/sh-time.jpg" class="time"/></p>
+							<a href="#" class="mai">立即购买</a>
+						</div>
+						<div class="main_boom_l blast">
+							<a href="#"><img src="imgs/sh-boom-12.jpg" /></a>
+							<a href="#" class="lta">泰国Mistine dream咬唇妆唇彩口红染唇液  保湿显色持久</a>
+							<p class="fp">￥<span>65.00</span> <span>￥86.00</span><img src="imgs/sh-huo.jpg" /> <span>66</span></p>
+							<p><img src="imgs/sh-time.jpg" class="time"/></p>
+							<a href="#" class="mai">立即购买</a>
+						</div>
+						
+					</div>
+					<div class="main_boom">
+						<div class="main_boom_l">
+							<a href="#"><img src="imgs/sh-boom-13.jpg" /></a>
+							<a href="#" class="lta">泰国Mistine dream咬唇妆唇彩口红染唇液  保湿显色持久</a>
+							<p class="fp">￥<span>65.00</span> <span>￥86.00</span><img src="imgs/sh-huo.jpg" /> <span>66</span></p>
+							<p><img src="imgs/sh-time.jpg" class="time"/></p>
+							<a href="#" class="mai">立即购买</a>
+						</div>
+						<div class="main_boom_l">
+							<a href="#"><img src="imgs/sh-boom-14.jpg" /></a>
+							<a href="#" class="lta">泰国Mistine dream咬唇妆唇彩口红染唇液  保湿显色持久</a>
+							<p class="fp">￥<span>65.00</span> <span>￥86.00</span><img src="imgs/sh-huo.jpg" /> <span>66</span></p>
+							<p><img src="imgs/sh-time.jpg" class="time"/></p>
+							<a href="#" class="mai">立即购买</a>
+						</div>
+						<div class="main_boom_l">
+							<a href="#"><img src="imgs/sh-boom-15.jpg" /></a>
+							<a href="#" class="lta">泰国Mistine dream咬唇妆唇彩口红染唇液  保湿显色持久</a>
+							<p class="fp">￥<span>65.00</span> <span>￥86.00</span><img src="imgs/sh-huo.jpg" /> <span>66</span></p>
+							<p><img src="imgs/sh-time.jpg" class="time"/></p>
+							<a href="#" class="mai">立即购买</a>
+						</div>
+						<div class="main_boom_l blast">
+							<a href="#"><img src="imgs/sh-boom-16.jpg" /></a>
+							<a href="#" class="lta">泰国Mistine dream咬唇妆唇彩口红染唇液  保湿显色持久</a>
+							<p class="fp">￥<span>65.00</span> <span>￥86.00</span><img src="imgs/sh-huo.jpg" /> <span>66</span></p>
+							<p><img src="imgs/sh-time.jpg" class="time"/></p>
+							<a href="#" class="mai">立即购买</a>
+						</div>
+						
+					</div>
+					
+				</div>
+				
+				<div class="main_cb" id="main_cb">
+					<div class="main_ctt cb">
+						<h1>分类推荐</h1>
+						<p>千万用户信赖的美妆品牌</p>
+					</div>
+					<div class="main_cbtj">
+						<div class="main_cbt">
+							<a href="#" class="fa">化妆水</a>
+							<a href="#" class="la">爽肤水</a>
+							<a href="#" class="la">紧肤水</a>
+							<a href="#" class="la">美容液</a>
+							<a href="#" class="la">精华水</a>
+							<a href="#" class="la">喷雾</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-h1.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-h2.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-h3.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-h4.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-h5.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-h6.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-h7.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-h8.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+					</div>
+					
+					<div class="main_cbtj">
+						<div class="main_cbt">
+							<a href="#" class="fa">洗面</a>
+							<a href="#" class="la">洗面奶</a>
+							<a href="#" class="la">洗面乳</a>
+							<a href="#" class="la">洗面膏</a>
+							<a href="#" class="la">洗面皂</a>
+							<a href="#" class="la">洗面粉</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-x1.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-x2.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-x3.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-x4.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-x5.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-x6.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-x7.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-x8.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+					</div>
+					
+					<div class="main_cbtj">
+						<div class="main_cbt">
+							<a href="#" class="fa">卸妆</a>
+							<a href="#" class="la">卸妆油</a>
+							<a href="#" class="la">卸妆水</a>
+							<a href="#" class="la">卸妆乳</a>
+							<a href="#" class="la">卸妆霜</a>
+							<a href="#" class="la">卸妆膏</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-xie1.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-xie2.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-xie3.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-xie4.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-xie5.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-xie6.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-xie7.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-xie8.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+					</div>
+					
+					<div class="main_cbtj">
+						<div class="main_cbt">
+							<a href="#" class="fa">面膜</a>
+							<a href="#" class="la">面膜贴</a>
+							<a href="#" class="la">水洗面膜</a>
+							<a href="#" class="la">睡眠面膜</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-m1.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-m2.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-m3.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-m4.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-m5.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-m6.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-m7.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-m8.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+					</div>
+					
+					<div class="main_cbtj">
+						<div class="main_cbt">
+							<a href="#" class="fa">底妆</a>
+							<a href="#" class="la">BB霜</a>
+							<a href="#" class="la">粉底液</a>
+							<a href="#" class="la">隔离霜</a>
+							<a href="#" class="la">粉饼</a>
+							<a href="#" class="la">散粉</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-d1.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-d2.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-d3.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-d4.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-d5.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-d6.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-d7.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-d8.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+					</div>
+					
+					<div class="main_cbtj">
+						<div class="main_cbt">
+							<a href="#" class="fa">唇妆</a>
+							<a href="#" class="la">口红</a>
+							<a href="#" class="la">唇彩</a>
+							<a href="#" class="la">唇膏</a>
+							<a href="#" class="la">唇釉</a>
+							
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-c1.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-c2.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-c3.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-c4.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-c5.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-c6.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-c7.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-c8.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+					</div>
+					
+					<div class="main_cbtj">
+						<div class="main_cbt">
+							<a href="#" class="fa">眼妆</a>
+							<a href="#" class="la">睫毛膏</a>
+							<a href="#" class="la">眼线笔</a>
+							<a href="#" class="la">眼影</a>
+							<a href="#" class="la">眉笔</a>
+							<a href="#" class="la">眼线液</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-y1.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-y2.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-y3.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-y4.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-y5.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-y6.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-y7.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-y8.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+					</div>
+					
+					<div class="main_cbtj">
+						<div class="main_cbt">
+							<a href="#" class="fa">香氛</a>
+							<a href="#" class="la">女士香水</a>
+							<a href="#" class="la">男士香水</a>
+							<a href="#" class="la">中性香水</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-xf1.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-xf2.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-xf3.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-xf4.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-xf5.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-xf6.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-xf7.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-xf8.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="main_cbtj">
+						<div class="main_cbt">
+							<a href="#" class="fa">美甲</a>
+							<a href="#" class="la">指甲油</a>
+							<a href="#" class="la">底油</a>
+							<a href="#" class="la">洗甲水</a>
+							<a href="#" class="la">美甲工具</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-mj1.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-mj2.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-mj3.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-mj4.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-mj5.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-mj6.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-mj7.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-mj8.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="main_cbtj">
+						<div class="main_cbt">
+							<a href="#" class="fa">洗发护发</a>
+							<a href="#" class="la">洗发水</a>
+							<a href="#" class="la">洗发皂</a>
+							<a href="#" class="la">护发素</a>
+							<a href="#" class="la">护发精油</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-xh1.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-xh2.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-xh3.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-xh4.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-xh5.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-xh6.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-xh7.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-xh8.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="main_cbtj">
+						<div class="main_cbt">
+							<a href="#" class="fa">身体护理</a>
+							<a href="#" class="la">沐浴露</a>
+							<a href="#" class="la">润肤露</a>
+							<a href="#" class="la">身体乳</a>
+
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-st1.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-st2.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-st3.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-st4.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-st5.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-st6.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-st7.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-st8.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="main_cbtj">
+						<div class="main_cbt">
+							<a href="#" class="fa">口腔护理</a>
+							<a href="#" class="la">牙膏</a>
+							<a href="#" class="la">牙刷</a>
+							<a href="#" class="la">漱口水</a>
+
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-kq1.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-kq2.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-kq3.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-kq4.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-kq5.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-kq6.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-kq7.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-kq8.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="main_cbtj">
+						<div class="main_cbt">
+							<a href="#" class="fa">女性护理</a>
+							<a href="#" class="la">卫生用品</a>
+							<a href="#" class="la">私密护理</a>
+							<a href="#" class="la">脱毛</a>
+							<a href="#" class="la">其他护理用品</a>
+
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-nx1.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-nx2.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-nx3.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-nx4.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-nx5.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-nx6.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-nx7.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-nx8.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="main_cbtj">
+						<div class="main_cbt">
+							<a href="#" class="fa">健康保养</a>
+							<a href="#" class="la">纤体瘦身</a>
+							<a href="#" class="la">美容丰胸</a>
+							<a href="#" class="la">成人用品</a>
+
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-jk1.png" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-jk2.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-jk3.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-jk4.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-jk5.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-jk6.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-jk7.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-jk8.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+					</div>
+					
+					<div class="main_cbtj">
+						<div class="main_cbt">
+							<a href="#" class="fa">化妆工具</a>
+							<a href="#" class="la">化妆刷</a>
+							<a href="#" class="la">化妆棉</a>
+							<a href="#" class="la">粉扑</a>
+
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-hz1.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-hz2.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-hz3.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-hz4.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-hz5.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-hz6.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic">
+							<a href="#">
+								<img src="imgs/sh-tui-hz7.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+						<div class="main_cbpic lpic">
+							<a href="#">
+								<img src="imgs/sh-tui-hz8.jpg" class="tui_tu"/>
+								<div class="main_cbtxt">
+									<p>法国Avene雅漾舒护活泉水喷雾300ml补水保湿舒缓肌肤</p>
+									<p class="tui_p"><span>￥109</span><img src="imgs/sh-huo.jpg"/><span>28354</span></p>
+								</div>
+							</a>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="main_b">
+					<div class="main_ctt">
+						<h1>品牌大全</h1>
+						<p>千万用户信赖的美妆网站</p>
+					</div>
+					<div class="main_bb">
+						<a href="#"><img src="imgs/sh-pp-l.jpg" class="pp-l"/></a>
+						<ul>
+							<li><a href="#"><img src="imgs/sh-pp-1.jpg"/></a></li>
+							<li><a href="#"><img src="imgs/sh-pp-2.jpg"/></a></li>
+							<li><a href="#"><img src="imgs/sh-pp-3.jpg"/></a></li>
+							<li><a href="#"><img src="imgs/sh-pp-4.jpg"/></a></li>
+							<li><a href="#"><img src="imgs/sh-pp-5.jpg"/></a></li>
+							<li><a href="#"><img src="imgs/sh-pp-6.jpg"/></a></li>
+							<li><a href="#"><img src="imgs/sh-pp-7.jpg"/></a></li>
+							<li><a href="#"><img src="imgs/sh-pp-8.jpg"/></a></li>
+							<li><a href="#"><img src="imgs/sh-pp-9.jpg"/></a></li>
+							<li><a href="#"><img src="imgs/sh-pp-10.jpg"/></a></li>
+							<li><a href="#"><img src="imgs/sh-pp-11.jpg"/></a></li>
+							<li><a href="#"><img src="imgs/sh-pp-12.jpg"/></a></li>
+							<li><a href="#"><img src="imgs/sh-pp-13.jpg"/></a></li>
+							<li><a href="#"><img src="imgs/sh-pp-14.jpg"/></a></li>
+							<li><a href="#"><img src="imgs/sh-pp-15.jpg"/></a></li>
+							<li><a href="#"><img src="imgs/sh-pp-16.jpg"/></a></li>
+							<li><a href="#"><img src="imgs/sh-pp-17.jpg"/></a></li>
+							<li><a href="#"><img src="imgs/sh-pp-18.jpg"/></a></li>
+							<li><a href="#"><img src="imgs/sh-pp-19.jpg"/></a></li>
+							<li><a href="#"><img src="imgs/sh-pp-20.jpg"/></a></li>
+							<li><a href="#"><img src="imgs/sh-pp-21.jpg"/></a></li>
+							<li><a href="#"><img src="imgs/sh-pp-22.jpg"/></a></li>
+							<li><a href="#"><img src="imgs/sh-pp-23.jpg"/></a></li>
+							<li><a href="#"><img src="imgs/sh-pp-24.jpg"/></a></li>
+						</ul>
+						<a href="#"><img src="imgs/sh-pp-r.jpg" class="pp-r"/></a>
+					</div>
+				</div>
+				
+			</div>
+		</main>
+		
+		<div class="bottom">	
+		  <p>更多感兴趣的商品马上搜索</p>
+			<div class="bottom_b">
+				<input type="text" class="search_b" placeholder="面膜"/>
+				<ul>
+					<span>热搜榜：</span>
+					<li><a href="">悦诗风吟</a></li>
+					<li><a href="">面霜</a></li>
+					<li><a href="">兰芝</a></li>
+					<li><a href="">面膜</a></li>
+					<li><a href="">化妆水</a></li>
+					<li><a href="">唇膏/口红</a></li>
+					<li><a href="">BB霜</a></li>
+					<li><a href="">精华</a></li>
+					<li><a href="">促销</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<footer class="footer">
+			<div class="footer_l">
+				<ul>
+					<li><a href="">关于丽子</a>/</li>
+					<li><a href="">商家入驻</a>/</li>
+					<li><a href="">加入我们</a>/</li>
+					<li><a href="">配送政策</a>/</li>
+					<li><a href="">售后保障</a>/</li>
+					<li><a href="">帮助中心</a>/</li>
+					<li><a href="">联系我们</a>/</li>
+					<li><a href="">平台公告</a>/</li>
+					<li><a href="">友情链接</a></li>
+				</ul>
+				<p>Copyright &copy; 2009-2016,辛巴信息(杭州)技术有限公司LIZI.COM增值电信业务经营许可证：浙B2-20110315  备案号：浙ICP备11012845号-5</p>
+				<p>服务时间：09:00-23:00&nbsp;&nbsp;客服热线：400-106-6160<a href=""><img src="imgs/ghs.png"/>浙公网安备33010402001635号</a></p>  				
+				<ul>
+					<li><a href="">米折网</a></li>
+					<li><a href="">一号店</a></li>
+					<li><a href="">国美在线</a></li>
+					<li><a href="">韩都衣舍</a></li>
+					<li><a href="">优购物</a></li>
+					<li><a href="">寺库网</a></li>
+					<li><a href="">海尔商城</a></li>
+					<li><a href="">比价网</a></li>
+					<li><a href="">挖东西</a></li>
+					<li><a href="">卷皮网</a></li>
+					<li><a href="">视客眼镜网</a></li>
+					<li><a href="">尚品网</a></li>
+					<li><a href="">飞牛网</a></li>
+					<li><a href="">悦美整形网</a></li>
+				</ul>
+				<a href=""><img src="imgs/flogo-jindian.png" class="tp"/></a>
+				<a href=""><img src="imgs/flogo-picc.png" class="tp"/></a>
+				<a href=""><img src="imgs/flogo-xinyong.png" class="tp"/></a>
+			</div>
+			<div class="footer_t">
+				<img src="imgs/erweima.png"/>
+				<img src="imgs/weixin.jpg" class="wx"/>
+				<p>扫描关注微信公众号</p>
+			</div>
+			<a href="" class="footer_r">
+				<img src="imgs/fapp.jpg"/>
+				<p>APP</p>
+				<p>手机客户端下载</p>
+			</a>
+		</footer>
+	</body>
+</html>
